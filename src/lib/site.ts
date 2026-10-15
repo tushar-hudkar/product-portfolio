@@ -6,7 +6,7 @@ export const site = {
   phone: "+91 9560855095",
   linkedin: "https://www.linkedin.com/in/tushar-hudkar",
   resume: "https://drive.google.com/file/d/1tPgs962U7wxhh3Rd9E4JuM13_glUse5v/view?usp=sharing",
-  url: "https://product-portfolio-ochre.vercel.app",
+  url: "https://tusharhudkar.vercel.app",
   description:
     "Lead Product Designer with 10+ years designing AI-powered B2B and B2C products that drive growth — and systems that sustain it.",
 };
