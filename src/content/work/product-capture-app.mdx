@@ -1,0 +1,169 @@
+Manage product assets without relying entirely on studios and professional photographers.
+
+## Overview
+
+E-commerce brands are under constant pressure to produce more visual content.
+
+They need images that communicate what a product looks like, how it is used, where it can be used and why customers should consider buying it.
+
+Dresma already had a web-based platform and Design Studio that supported digital asset production. However, there was no mobile experience connecting the physical product with the digital workflow.
+
+This led me to a broader question:
+
+<Callout>
+  Could we make professional-looking product content more accessible by bringing product capture, AI-powered creation and the existing digital asset workflow into one connected experience?
+</Callout>
+
+## The opportunity
+
+The opportunity was not simply to build another camera application. It was to rethink how a product moves from physical object to digital content.
+
+I designed a mobile experience that brought together guided product photography, lightweight editing and AI-powered content creation, while keeping the resulting projects connected to the existing Dresma web ecosystem.
+
+## Understanding the users
+
+The experience was designed for people responsible for creating, managing or delivering digital product content. The primary user groups included social media managers, brand photographers and agencies managing digital assets for brands.
+
+1. **A social media manager** needed speed and creative flexibility. They might have a product image but need to turn it into a lifestyle scene quickly.
+2. **A brand photographer** needed more control over capture, framing and product angles while still benefiting from a connected digital workflow.
+3. **An agency** needed consistency and scalability because the same production process could repeat across many products and clients.
+
+## The problems I identified
+
+*The first problem*
+
+**Product launch dependency.** A brand launching a product could have the physical inventory ready but still need to arrange a photographer, studio, lighting, editing and post-production before the product could be effectively marketed.
+
+*The second problem*
+
+**Lack of photography expertise among many potential users.** Good product photography requires decisions about framing, distance, lighting, composition and consistency.
+
+*The third problem*
+
+**Tool fragmentation.** Even after a photograph was captured, users could need separate tools to remove backgrounds, resize images, create lifestyle imagery and prepare content for different channels.
+
+Users were not waking up thinking about camera controls, image segmentation or generative AI. They were thinking: *"I need marketplace-ready images and I need this content today."*
+
+**Instead of designing around technology, I designed around the user's desired outcome.**
+
+These problems suggested that the mobile application should not simply duplicate the web application. It needed to become the capture and quick-creation layer of the larger Dresma ecosystem.
+
+## Research and discovery
+
+I approached discovery by looking at both the user experience and the existing product ecosystem. The research included stakeholder interviews, analysis of existing user feedback, understanding the current web workflow, user journey analysis, usability testing and product analytics through Mixpanel.
+
+Rather than starting by asking which features should be added to the application, I wanted to understand where users were experiencing friction and which parts of the content production process created the greatest dependency.
+
+### Users did not necessarily think in terms of AI capabilities. They were more likely to describe an outcome:
+
+- Put my product on a beach.
+- Show this product with a model.
+- Create an image I can use on Amazon.
+
+### Photography expertise needed to become part of the product
+
+- The camera experience needed to teach rather than simply provide controls.
+- If the user doesn't know the correct distance or framing for a product, giving them more camera settings doesn't solve the problem.
+
+### AI needed both automation and control
+
+Generative AI could dramatically reduce production effort, but a completely automated experience could leave users uncertain about why an image looked the way it did or how to change it.
+
+### Mobile and web needed to behave as one ecosystem
+
+The mobile application would be most valuable when it reduced the gap between capture and the existing digital asset workflow.
+
+## Defining the product goal
+
+Enable e-commerce teams to capture, enhance and transform product images into marketplace- and social-ready visual assets without requiring professional photography or complex editing workflows.
+
+**For users,** the experience needed to be faster, simpler and more accessible.
+
+**For the business,** it needed to increase the value of the existing Dresma ecosystem by bringing more of the asset creation journey into the platform.
+
+## Product strategy
+
+1. Help users capture consistent product imagery, then transform those images into richer product assets.
+2. Recurring usage of product images, because content production is not a one-time activity for e-commerce brands.
+3. Smooth transition from the mobile app to the existing Dresma web environment.
+4. AI workflows without making the experience feel like a technical AI interface — translate AI complexity into familiar creative decisions.
+5. **Automate what the system is good at. Keep control where the user's intent matters.**
+
+## Design thinking
+
+### Information architecture
+
+**Mobile is naturally suited to:** capture, quick editing, quick creation and on-the-go productivity.
+
+**The web environment is better suited to:** deep editing, project management, collaboration and larger-scale asset workflows.
+
+A user could capture a product on mobile, create or enhance content, and continue working with that project through the Dresma web experience.
+
+I organized the experience around the user's most frequent jobs rather than the underlying technical architecture.
+
+<Figure src="/work/product-capture-app/information-architecture.webp" alt="Diagram splitting responsibilities: mobile handles capture, quick editing, quick creation and collaboration; web handles deep editing, project management, large-scale workflows, marketplace listings and Amazon A+ content" caption="Mobile vs. web responsibilities" tone="light" />
+
+### Camera experience
+
+The challenge was not simply to create a camera screen. It was: how might we help someone without professional photography expertise produce a useful product image?
+
+I wanted this experience to expose guidance for different marketplaces, multiple product categories and multiple product angles.
+
+**Camera guidance:** embedding photography knowledge into the interface — framing guides, distance cues, timer controls, zoom and white balance.
+
+**Design principle:** turn expertise into interface guidance.
+
+<Figure src="/work/product-capture-app/camera-guidance.webp" alt="Camera guidance: framing guides, distance cues, timer controls, zoom and white balance layered over the camera view" tone="light" />
+
+<Figure src="/work/product-capture-app/camera-experience.webp" alt="Six capture screens: a dress outline guide filling in across multiple angles, and footwear capture with camera controls, white balance presets and a pinch-to-zoom hint" tone="dark" fill />
+
+### From capture to creation experience
+
+After capturing or uploading an image, the user could move into a collection of focused creation tools. Users choose what they want to achieve, rather than needing to know which technical operation will achieve it. And they can start the journey from the camera screen or the tools page.
+
+<Figure src="/work/product-capture-app/creation-experience.webp" alt="Capture screens leading into the Tools page, with creation tools such as Showcase Product in Context and a sheet to pick an existing asset, upload from gallery or start a shoot" tone="dark" />
+
+### Designing the AI experience
+
+The goal was to make it controllable, not to hide the uncertainty. A blank prompt puts the burden on the user to understand how generative systems work. Instead, I designed a structured prompt-generation experience. The system could identify the product category and relevant context and suggest parameters such as:
+
+- Mood
+- Color palette
+- Lighting
+- Scale and proportion
+- Textures and materials
+- Additional elements
+
+The user could then modify those parameters. The system translated those choices into a prompt that could be used for image generation.
+
+The purpose was to give users a starting point and make the relationship between their choices and the resulting prompt more understandable.
+
+<Figure src="/work/product-capture-app/ai-experience.webp" alt="AI generation screens with suggested parameters such as mood, lighting and colour palette, and resulting lifestyle images" tone="dark" />
+
+### Designing the output experience
+
+For model-based experiences, users could also select from available models and angles. The reference could help guide the system toward the desired environment, composition or visual style.
+
+The user wasn't simply generating an image. They were creating an asset that could continue into the broader production workflow.
+
+<Figure src="/work/product-capture-app/output.webp" alt="Output screens showing model selection, angle options and generated on-model images" tone="dark" />
+
+### Editor experience
+
+The mobile editor enables users to transform raw product shots into marketplace-ready assets by creating lifestyle imagery and infographics, customizing backdrops, product angles, layouts, text, and visual elements within a single, intuitive workflow.
+
+<Figure src="/work/product-capture-app/editor.webp" alt="Mobile editor screens for backdrops, text and layout adjustments" tone="dark" />
+
+## Measuring success
+
+<Metrics
+  items={[
+    { value: "9 → 4 min", label: "Time-to-asset" },
+    { value: "56%", label: "Capture → completed AI-generated project" },
+    { value: "61%", label: "Mobile projects continued on web" },
+  ]}
+/>
+
+- Making product capture more accessible reduced time-to-asset from 9 minutes to 4 minutes.
+- The percentage of users who successfully moved from capturing a product to creating a completed AI-generated project is 56%.
+- The percentage of mobile-created projects that were subsequently opened or continued in the Dresma web application is 61%.

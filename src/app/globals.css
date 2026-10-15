@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* Light-only theme: warm white, ink text, blue for actions, coral for highlights. */
+:root {
+  --background: #fbfaf7;
+  --foreground: #161514;
+  --muted: #6d6a64;
+  --line: #e5e1d9;
+  --surface: #f2efe9;
+  --accent: #2f4bff;
+  --highlight: #ea5a3b;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-highlight: var(--highlight);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-editors-note);
+  --font-hand: var(--font-caveat);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Opening line of a case study reads as a lead paragraph. */
+.cs-body > p:first-child {
+  margin-top: 6rem;
+  font-family: var(--font-editors-note);
+  font-size: 1.875rem;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+
+/* Case study section numbers: 01, 02, … above each h2 (mirrors the TOC). */
+.cs-body {
+  counter-reset: section;
+}
+.cs-h2 {
+  counter-increment: section;
+}
+.cs-h2::before {
+  content: counter(section, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-editors-note);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #cfc9be;
+}
+
+/* My Process: sub-text shows only for the active step; space stays reserved. */
+@property --active {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+.ai-detail {
+  opacity: var(--active);
+}
+.ai-step:hover .ai-detail,
+.ai-step:focus-within .ai-detail {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  .reveal {
+    animation: reveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  /* AI process panel: steps light up one after another, on a loop. */
+  .ai-step {
+    animation: ai-step 18s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 3s);
+  }
+  @keyframes ai-step {
+    0%,
+    22%,
+    100% {
+      --active: 0;
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    4%,
+    15% {
+      --active: 1;
+      background: #fff;
+      border-color: var(--accent);
+    }
+  }
+  .ai-dot {
+    animation: ai-dot 18s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 3s);
+  }
+  @keyframes ai-dot {
+    0%,
+    22%,
+    100% {
+      background: #cfc9be;
+      transform: scale(1);
+    }
+    4%,
+    15% {
+      background: var(--accent);
+      transform: scale(1.25);
+    }
+  }
+  .typing span {
+    animation: typing 1.2s infinite;
+  }
+  .typing span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes typing {
+    0%,
+    60%,
+    100% {
+      opacity: 0.25;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+}

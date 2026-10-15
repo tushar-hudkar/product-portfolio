@@ -1,0 +1,136 @@
+Reducing the friction between submitting a creative requirement and receiving a production-ready e-commerce asset.
+
+## My Role & Responsibilities
+
+I owned the end-to-end UX and UI design of the Design Studio experience. My role spanned operational analysis, workflow architecture, interaction design, and usability validation, ensuring the product addressed both business needs and user challenges.
+
+<Cards>
+  <Card title="Operations & Workflow Analysis">
+    - Analyzed existing asset production processes to identify operational bottlenecks, manual dependencies, and workflow gaps.
+    - Mapped internal team operations and external customer journeys to understand how requests, production tasks, reviews, and asset delivery connected.
+  </Card>
+  <Card title="User Experience">
+    - Translated operational insights into information architecture and end-to-end user flows.
+    - Structured project, task, and asset management workflows to improve visibility, coordination, and process consistency.
+  </Card>
+  <Card title="UI & Interaction Design">
+    - Designed the Design Studio interface and editing experience for creating and refining product assets.
+    - Defined interaction patterns for asset manipulation, configuration, and workflow actions.
+  </Card>
+  <Card title="Usability Testing & Validation">
+    - Evaluated key workflows to identify usability issues and refined the information architecture, interactions, and interface designs based on user feedback.
+    - Defined experience-level success metrics to assess workflow efficiency and guide design improvements.
+  </Card>
+</Cards>
+
+## Understanding the users
+
+The business operated in the e-commerce content-production space, supporting brands, sellers, agencies, and marketing teams that needed large volumes of marketplace-ready visual assets.
+
+<Cards>
+  <Card title="External users">
+    - Brand owners
+    - E-commerce sellers
+    - E-commerce managers
+    - Marketing managers
+    - Agencies managing digital assets for brands
+  </Card>
+  <Card title="Internal users">
+    - Team leads
+    - Designers
+    - Creative production teams
+    - Quality-control teams
+    - Customer-facing teams
+  </Card>
+</Cards>
+
+<Callout>
+  Reduce the friction between submitting a creative requirement and receiving a production-ready e-commerce asset.
+</Callout>
+
+## Existing workflow
+
+> Client → Sales/Marketing → Requirement collection → Cloud storage → Internal team → Task delegation → Designer → Review → Delivery
+
+A custom form was used for getting requirements and references, which were then passed to a dedicated team.
+
+<Figure src="/work/design-studio/existing-workflow.webp" alt="Existing workflow diagram showing batch edits, retouching and resizing passing through multiple teams, alongside the AI tools on offer" caption="Existing workflow — batch edit, product re-touch and re-size, AI image enhancement tools and high-engagement content creation." tone="light" />
+
+## Challenges
+
+1. **Highly manual workflow:** Requirements, references, source assets, instructions, and feedback were distributed across different communication channels.
+2. **Linear production workflows:** Existing productivity tools were optimized around sequential operations.
+3. **Fragmented asset structure:** This structure worked for individual production activities, but did not represent how customers actually think about their product.
+4. **Limited customer control.**
+5. Simplify the technically complex AI workflow into a sequence of understandable decisions.
+
+## Goal
+
+The goal was not simply to build another image-editing tool. The larger opportunity was to create a product that connected customer intent, creative production, task management, and final asset delivery into one experience.
+
+1. **Reuse existing product assets:** Allow users to create on-model imagery from product-only images or mannequin photography, preserving the value of their existing content.
+2. **Expand creative possibilities:** Enable users to adapt imagery for different demographic audiences and choose suitable AI-generated models and viewing angles.
+3. **Make AI generation controllable:** Provide visual references, mask adjustments, editing tools, and generation settings so users can guide the output rather than depend entirely on a prompt.
+4. **Connect mobile capture with web-based creation:** Enable users to capture product images through the mobile app and use those assets in the broader image-generation workflow.
+5. **Improve product and business performance:** Design the experience to increase feature adoption, reduce time to value, and improve the percentage of users who successfully complete image-generation tasks.
+
+## Key Design Decisions
+
+### From asset-centric to product-centric
+
+Instead of designing the system around individual image types, I organized the experience around the product and its complete asset requirements.
+
+I changed the conceptual model from *"folders of asset types"* to *"products with multiple asset requirements."*
+
+### From linear workflow to flexible workflow
+
+The system needed to support both self-service and managed production rather than forcing every user through the same process.
+
+### From feature delivery to measurable behavior
+
+I defined success using adoption, time to value, completion, and operational metrics instead of treating feature launch as the final outcome.
+
+## Design Principles
+
+I established a few principles to guide the experience.
+
+<Cards>
+  <Card title="Product-first, not asset-first">The primary unit of work should be the product, not the individual image.</Card>
+  <Card title="Self-service where possible, managed service where necessary">Users should be able to complete simple tasks themselves while still having an easy path to request professional assistance.</Card>
+  <Card title="Reduce context switching">Requirements, source images, instructions, editing tools, production status, and output should live within the same workflow wherever possible.</Card>
+  <Card title="Make progress visible and design for scale">The interface needed to work for a single product as well as large-scale e-commerce workflows involving hundreds or thousands of assets.</Card>
+</Cards>
+
+## Interface outlook
+
+Instead of forcing users to move between multiple tools, the experience brought common image-production activities into one web-based workflow.
+
+1. **Marketplace-Aware Design:** One of the important product opportunities was that the same product often needed different assets depending on where it was being sold.
+2. **Transform product images into on-model imagery:** Users can begin with an existing product image, including apparel displayed on a mannequin.
+3. **Reference-based generation:** Users can browse reference images, search for suitable examples, upload their own references where supported, or use a manual prompt.
+4. The interface was designed to reflect how the e-commerce assets related to one specific product should be organized, rather than how an internal production team historically organized folders.
+5. Self-service would not solve every creative requirement. For complex requirements, users could submit a project to the internal production team.
+
+<Figure src="/work/design-studio/interface.webp" alt="Design Studio editor screens: prompt-based AI background generation, choosing from generated variations, and the assets panel with editing tools" tone="dark" fill />
+
+## Measuring Success / Metric
+
+<Metrics
+  items={[
+    { value: "31.9% → 69%", label: "Design Studio adoption rate (peak)" },
+    { value: "9.7% → 58.8%", label: "Activation rate" },
+    { value: "90.3% → 41.2%", label: "In-studio drop-off" },
+  ]}
+/>
+
+| Time span | Total platform users | Design Studio users | Adoption rate | Activated users | Activation rate | In-studio drop-off |
+| --- | --: | --: | --: | --: | --: | --: |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 1</em>Oct–Dec 2022</span> | 3,890 | 1,240 | 31.9% | 120 | 9.7% | 90.3% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 2</em>Jan–Feb 2023</span> | 4,100 | 1,445 | 35.2% | 244 | 16.9% | 83.1% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 3</em>Mar–May 2023</span> | 4,319 | 1,760 | 40.8% | 426 | 24.2% | 75.8% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 4</em>Jun–Aug 2023</span> | 4,385 | 2,100 | 47.9% | 490 | 23.3% | 76.7% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 5</em>Sep–Nov 2023</span> | 6,813 | 2,589 | 38.0% | 643 | 24.8% | 75.2% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 5</em>Dec 2023–Feb 2024</span> | 5,948 | 3,157 | 53.1% | 964 | 30.5% | 69.5% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 6</em>Mar–Apr 2024</span> | 4,420 | 2,758 | 62.4% | 1,708 | 61.9% | 38.1% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 6</em>May–Aug 2024</span> | 4,650 | 3,210 | 69.0% | 1,872 | 58.3% | 41.7% |
+| <span className="block whitespace-nowrap"><em className="block text-xs">Iteration 7</em>Sep–Nov 2024</span> | 5,623 | 2,910 | 51.8% | 1,710 | 58.8% | 41.2% |

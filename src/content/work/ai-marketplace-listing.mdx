@@ -1,0 +1,228 @@
+Direct integration with Seller Central to update existing product listings or create new listings.
+
+## Objective
+
+Build a web application that enables users to generate high-performing Amazon product listings, including infographics and A+ content, using generative AI.
+
+The goal is to streamline the end-to-end listing creation process while improving output quality and consistency.
+
+## My Role & Approach
+
+### Responsible
+
+Collaborated with founders and cross-functional teams including marketing, sales, and engineering. Responsible for:
+
+1. UX Research
+2. Market & Competitive Analysis
+3. Product Strategy & Feature Prioritization
+4. Information Architecture
+5. Interaction Design & Prototyping
+
+### Approach
+
+1. Led cross-functional design discussions across Product, Engineering, and AI teams.
+2. Facilitated stakeholder workshops to align business goals, user needs, and technical feasibility.
+3. Conducted user interviews and synthesized insights to shape the information architecture and user experience.
+4. Defined success metrics to measure product adoption, engagement, and business impact.
+
+## ICPs
+
+### Target Group
+
+Targeted at brands operating with manual processes and small sellers aiming to build an online presence for their products.
+
+<Cards>
+  <Card title="Brand Owners and Founders">Seeking to elevate their product presence.</Card>
+  <Card title="eCommerce Managers">Handling marketplace and D2C operations.</Card>
+  <Card title="Marketing Managers">Orchestrating brand campaigns and engagement.</Card>
+  <Card title="eCommerce Sellers">Looking to optimize content and streamline workflows.</Card>
+</Cards>
+
+### Pain Points
+
+As market trends evolve, demand fluctuates and supply chains are impacted. To manage these demand–supply dynamics, sellers need a robust system that improves product visibility and efficiently highlights key product features.
+
+Seller pain points intensify even when updating existing listings, as repeating the same manual steps is neither easy nor consistent. Automating this workflow provides meaningful relief and efficiency gains.
+
+### Common challenges faced by users
+
+<Cards cols={3}>
+  <Card title="Strategic & Creative Challenges">Inconsistent brand visual identity and difficulty differentiating from competitors.</Card>
+  <Card title="Operational Challenges">Coordination issues within the team, because it's a time-consuming process.</Card>
+  <Card title="Technical Challenges">Limited understanding of platform-specific requirements and expensive tools.</Card>
+</Cards>
+
+Small and medium businesses (SMBs), which include micro and small sellers, contribute significantly to the marketplace. More than 60% of sales on Amazon generally come from third-party independent sellers, the majority of whom are small and medium-sized enterprises.
+
+According to Amazon India's own reports, as of late 2024, Amazon has digitized over 12 million micro, small, and medium enterprises, with more than 1.6 million sellers actively offering products on Amazon India.
+
+## Business Challenges & Trade-offs
+
+### Problem Definition
+
+<Callout label="How might we">
+  How might we enable sellers to create marketplace-ready listings through a unified AI-assisted workflow while maintaining brand consistency and reducing operational effort?
+</Callout>
+
+### Business constraints
+
+- **High System Latency:** Generating a complete listing required multiple AI models, validation checks, and data sources to work together, increasing processing time and delaying content delivery.
+- **No real-time collaboration:** There was no real-time feedback or chat system, which slowed communication and decision-making.
+- **Lack of Performance Visibility:** Sellers cannot predict listing performance before publishing, making optimization largely trial-and-error.
+
+## Research Insights
+
+### Market Research
+
+The market is large and presents multiple opportunities for observation and analysis.
+
+More than 60% of sales on Amazon come from third-party independent sellers, the majority of whom are small and medium-sized enterprises/businesses (SMEs/SMBs).
+
+### SME Branding Maturity Levels
+
+- **Unstructured:** No formal brand guidelines; listings are generic and inconsistent.
+- **Basic Branding:** Use of logos and labels; products are listed with standard content and basic A+ templates.
+- **Structured:** Clear brand guidelines are followed, with the use of customized A+ modules and consistent visual identity.
+- **Data-Driven:** In addition to strong branding, sellers leverage analytics and AI to ensure consistency and deliver personalized A+ content.
+
+### Competition research
+
+1. **No Unified Platform:** There is no single platform capable of generating a complete (at least basic) product listing in one place.
+2. **Lack of eCommerce Focus:** Most tools primarily focus on social media images, lifestyle and model imagery rather than end-to-end eCommerce listing needs.
+3. **No Amazon Integration:** There is no direct integration with Amazon seller accounts, resulting in reliance on manual processes.
+4. **No Listing Performance Analysis:** Existing solutions lack a ranking or analytics system to evaluate listing performance.
+5. **High Cost and Inefficiency:** Pricing is often high, making these tools less accessible for small sellers, and the overall process remains time-consuming.
+
+## Opportunities and gaps
+
+### How do sellers manage digital assets?
+
+1. Build an in-house team or hire an agency to get things done.
+2. Sellers follow separate, custom workflows for each asset type.
+   - A+ content creation is handled as a completely separate process.
+   - Hire professional photographers and models for lifestyle and on-model shoots.
+3. Assets are managed using folder systems and CSV formats across cloud storage or internal tools, with uploading and updates handled manually.
+4. Updating an existing listing requires repeating much of the process from scratch, rather than building on existing assets.
+5. Sellers rely heavily on Amazon's native analytics, with limited ability to derive deeper insights or optimize listings proactively.
+
+### Why do they operate this way?
+
+1. Sellers prioritize managing their Amazon Seller Central accounts, including compliance, fulfillment, and payments.
+2. While managing large inventories, sellers focus heavily on running operations efficiently.
+3. Driving sales is the priority, while branding often comes second.
+4. Sellers understand their products well but don't have enough time for competitor research.
+5. Many sellers do not come from design or technical backgrounds.
+
+### How should it be?
+
+1. Ensure consistency in branding and communication to build trust, convey value, and improve discoverability.
+2. Develop a clear understanding of the target segment (including demographics and cultural context) and the market.
+3. Follow Amazon image guidelines, including size, background color, and margin requirements.
+
+## Product Vision
+
+<Figure src="/work/ai-marketplace-listing/intent-to-publish.webp" hideOnMobile alt="Diagram of the end-to-end flow from seller intent to a published Amazon listing" caption="From Intent to Publish — an AI-powered workflow that turns seller intent into high-performing Amazon listings." tone="light" />
+
+### Goals
+
+1. Enable end-to-end listing generation within a single workflow.
+2. Reduce effort and time required to create Amazon listings.
+3. Improve output and provide actionable insights on listing effectiveness.
+
+## Design Approach
+
+### Defining the ICP / Target Group
+
+<Cards>
+  <Card title="New Brands / Sellers">
+    Those in the initial phase of their business journey, preparing to list on Amazon.
+
+    - They have already created brand guidelines.
+    - They need support in creating their branding from scratch.
+  </Card>
+  <Card title="Existing Brands / Sellers on Amazon">
+    Those who have already established their presence on Amazon.
+
+    - They manage their catalog internally (in-house team).
+    - They work with external agencies to manage their listings and digital assets.
+  </Card>
+</Cards>
+
+### Hypothesis
+
+1. **New sellers (who need branding support):** This is the ideal stage to onboard them with a fresh approach and clear context, as they are just beginning their journey on Amazon.
+2. **Established brands (already listed on Amazon):** These sellers have access to significant data, making it easier to understand their business and optimize listings. However, if they are already using another solution, onboarding them may require additional effort.
+
+### Key features
+
+1. Integrate with **Amazon Seller Central** to import catalog and push updates back seamlessly.
+2. A **score mechanism** as a Product Listing Analyzer that evaluates listing performance as a ranking or score.
+3. **Actionable insights** that allow users to **customise** listing components themselves as needed.
+4. **Personalised recommendations** through **brand integration**.
+5. Users can submit listings for **"Pro-Touch"** updates, and easily provide instructions for required changes.
+
+## Information architecture
+
+<Figure src="/work/ai-marketplace-listing/information-architecture.webp" alt="Information architecture covering onboarding, brand setup, marketplace integration, import and sync, ranking, recommendations, templates, validation and quality checks" caption="Onboarding & Access, Brand Setup, Marketplace Integration, Import & Sync, Product Ranking, Recommendations, Template Creation, Content Validation, Data Visualization & Validation, Quality Check Analysis and Brand Validation systems." tone="dark" />
+
+## Key design decision
+
+The business targets eCommerce sellers and brand owners, but success depends on recognizing that they are also responsible for their end users. Therefore, the experience must be structured and intuitive.
+
+### Account Integration
+
+Direct account integration that automates catalog management, allowing sellers to update live listings or introduce new product lines with high-quality, compliant content.
+
+<Figure src="/work/ai-marketplace-listing/account-integration.webp" alt="Two entry points: optimise existing Amazon listings by importing from Amazon, or create new listings by uploading products" caption="Optimize product listings on Amazon, or create new product listings for Amazon." tone="dark" />
+
+### Score Mechanism
+
+Evaluating the readiness of product listings is challenging, as effective listing creation involves multiple nuanced factors — white BG images, lifestyle images, on-model imagery, comparison & size charts, product descriptions and A+ content (basic and premium), each with its own score weightage.
+
+An effective product page involves many nuances, including detailed A+ content, high-engagement infographics, and comprehensive product descriptions. A scoring mechanism simplifies listing evaluation and helps measure success.
+
+<Figure src="/work/ai-marketplace-listing/score-mechanism.webp" alt="Listing score breakdown with weighted components such as lifestyle images, on-model imagery, comparison charts and A+ content" tone="dark" />
+
+### Brands Alignment
+
+Capturing the brand story is essential for defining the right brand essence, allowing the system to learn the brand's voice and tone and translate them into high-quality content that resonates with the target niche.
+
+<Figure src="/work/ai-marketplace-listing/brand-alignment.webp" fill alt="Brand setup screens: connect social and marketplace accounts, choose tone of voice, target audience and brand aesthetic" caption="Website link, social media and marketplace accounts, tone of voice, target audience and brand aesthetic." tone="dark" />
+
+### Right Template
+
+Fetching the right data for A+ templates and populating it accurately is critical. Modular components are designed to highlight key product features and fit into both basic and premium template structures.
+
+<Figure src="/work/ai-marketplace-listing/template-library.webp" alt="A+ module library showing standard comparison chart and single image with sidebar modules" caption="A+ modules" tone="dark" />
+
+<Figure src="/work/ai-marketplace-listing/module-editor.webp" alt="Module editor with fields for headline, subheadline, body text, image caption and bullet points" caption="Module editor" tone="dark" />
+
+## Outcomes and Value
+
+- Reduced operational costs and manual effort through automation.
+- Users understand what data will be used and how it impacts product listings.
+- Generate model and lifestyle images without hiring models or studios, saving costs and logistical effort.
+- The platform makes it easier for users to scale their business and adapt to new demographics.
+- A data-driven approach for predictive decision-making in product catalog updates.
+
+## Impact & Reflection
+
+<Metrics
+  items={[
+    { value: "28% → 64%", label: "Activation Rate" },
+    { value: "25% → 46%", label: "Retention Rate" },
+    { value: "75% → 54%", label: "Churn Rate" },
+  ]}
+/>
+
+**Impact:** Improved activation and retention led to active user growth from 255 → 872.
+
+| Month (2025) | Starting active | New users | Activated | Activation | Retained | MoM retention | Churn | Ending active | Cumulative |
+| --- | --: | --: | --: | --: | --: | --: | --: | --: | --: |
+| May | 255 | 220 | 62 | 28% | 64 | 25% | 75% | 284 | 875 |
+| Jun | 284 | 260 | 91 | 35% | 71 | 25% | 75% | 331 | 1,135 |
+| Jul | 331 | 310 | 109 | 35% | 93 | 28% | 72% | 403 | 1,445 |
+| Aug | 403 | 360 | 148 | 41% | 121 | 30% | 70% | 481 | 1,805 |
+| Sep | 481 | 420 | 193 | 46% | 173 | 36% | 64% | 593 | 2,225 |
+| Oct | 593 | 480 | 288 | 60% | 243 | 41% | 59% | 723 | 2,705 |
+| Nov | 723 | 540 | 346 | 64% | 332 | 46% | 54% | 872 | 3,245 |
