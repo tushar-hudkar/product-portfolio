@@ -85,7 +85,7 @@
   .gap-callout { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; padding-top: 24px; border-top: 1px dashed var(--line); }
   .gap-callout .big { font: 400 clamp(48px, 7vw, 76px)/1 var(--serif); color: var(--warn); }
   .gap-callout p { color: var(--muted); max-width: 46ch; }
-  .note { font-size: 13px; color: var(--faint); margin-top: 18px; }
+  .note { font-size: 13px; color: var(--faint); margin-top: 18px; font-style: italic; }
   .facts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 16px; }
   .fact { padding: 22px; border-radius: 20px; border: 1px solid var(--line); }
   .fact h3 { font-size: 16px; margin-bottom: 6px; } .fact p { color: var(--muted); font-size: 15px; }
