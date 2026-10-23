@@ -142,7 +142,7 @@
 
   /* Role */
   .role { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 64px; }
-  .role dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .role dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); align-self: end; align-content: start; }
   .role dl div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
   .role dt { font: 500 12px/1.9 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
   .role dd { margin: 0; }
