@@ -148,7 +148,7 @@
   .role dd { margin: 0; }
 
   /* Research inside My role */
-  .research { margin-top: 96px; display: grid; gap: 56px; }
+  .research { display: grid; gap: 56px; }
   .r-head { display: grid; gap: 18px; max-width: 760px; }
   .r-title { font: 400 clamp(32px, 4vw, 48px)/1.05 var(--serif); letter-spacing: -0.025em; margin: 0; }
   .r-title em { color: var(--accent); }
@@ -247,7 +247,7 @@
     .principle, .principle:nth-child(even) { grid-template-columns: 1fr; gap: 32px; }
     .principle .shot, .principle:nth-child(even) .shot { order: 0; max-width: 280px; }
     .role { grid-template-columns: 1fr; gap: 40px; }
-    .research { margin-top: 72px; gap: 44px; }
+    .research { gap: 44px; }
     .r-block { grid-template-columns: 1fr; gap: 16px; }
     .r-who, .r-method { grid-template-columns: 1fr; }
     .r-f { grid-template-columns: 1fr; gap: 10px; }
