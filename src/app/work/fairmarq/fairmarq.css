@@ -230,6 +230,10 @@
     .ov-phone { flex: 1; height: auto; min-height: 0; }
   }
 
+  /* Larger intro text reads lighter on dark: Light (300) for the 21 px and 17 px intros; 15 px descriptions stay Regular. */
+  .lede, .questions li, .principle p { font-weight: 300; }
+  .questions .where { font-weight: 400; }
+
   /* Reveal */
   .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
   .rv.in { opacity: 1; transform: none; }
