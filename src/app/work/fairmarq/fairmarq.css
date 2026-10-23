@@ -31,6 +31,13 @@
   .muted { color: var(--muted); } .faint { color: var(--faint); }
   .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 
+  /* Top bar */
+  .pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 999px; background: var(--accent); color: #04140C; font: 500 15px var(--sans); text-decoration: none; white-space: nowrap; }
+  .pill.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .pill:hover { filter: brightness(1.06); }
+  .textlink { color: var(--faint); font-size: 13px; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .textlink:hover { color: var(--muted); text-decoration-color: var(--faint); }
+
   /* Hero */
   .hero { padding: 48px 0 96px; }
   .hero .grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 64px; align-items: center; }
