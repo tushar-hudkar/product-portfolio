@@ -2,6 +2,7 @@ import Image from "next/image";
 import { companies, site } from "@/lib/site";
 import { projects } from "@/lib/projects";
 import { AiProcess } from "@/components/ai-process";
+import { FairmarqFeature } from "@/components/fairmarq-feature";
 import { ProjectRow } from "@/components/project-row";
 import { LinkedInIcon, MailIcon } from "@/components/icons";
 
@@ -82,6 +83,9 @@ export default function Home() {
           ))}
         </ol>
       </section>
+
+      {/* Fairmarq: self-initiated project */}
+      <FairmarqFeature />
 
       {/* Previously worked with */}
       <section aria-labelledby="clients" className="mx-auto mt-28 max-w-6xl px-6">

@@ -1,0 +1,246 @@
+/* Fairmarq story page. Everything is scoped to .fq so other pages are untouched. */
+.fq {
+
+  & {
+    --bg: #0B0D0C; --surface: #121513; --raised: #1A1E1C; --line: #232725;
+    --text: #F2F4F3; --muted: #9BA19D; --faint: #6E756F;
+    --accent: #19C37D; --accent-soft: #11291E; --warn: #F2B356; --bad: #FF6B5E;
+    --serif: var(--font-editors-note), Georgia, 'Times New Roman', serif;
+    --sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: var(--font-geist-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+    --gutter: max(20px, env(safe-area-inset-left, 0px));
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  & { background: var(--bg); color: var(--text); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding-left: var(--gutter); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .narrow { max-width: 680px; }
+
+  /* Type */
+  .eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+  .eyebrow b { color: var(--accent); font-weight: 500; }
+  h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(44px, 7vw, 84px); line-height: .98; }
+  h2 { font-size: clamp(36px, 5.2vw, 64px); line-height: 1.02; }
+  h1 em, h2 em { color: var(--accent); }
+  h3 { font: 600 20px/1.3 var(--sans); letter-spacing: -.01em; margin: 0; }
+  p { margin: 0; }
+  .lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; color: var(--muted); max-width: 60ch; }
+  .muted { color: var(--muted); } .faint { color: var(--faint); }
+  .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  /* Hero */
+  .hero { padding: 48px 0 96px; }
+  .hero .grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 64px; align-items: center; }
+  @media (min-width: 901px) and (max-width: 1320px) { .hero .phone { margin-right: 76px; } }
+  .hero .copy { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .questions { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .questions li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .questions .k { font: 500 12px/1.9 var(--mono); color: var(--accent); }
+  .questions .where { display: block; font-size: 13px; color: var(--faint); margin-top: 2px; }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .byline { font-size: 14px; color: var(--faint); }
+
+  /* Phone */
+  /* Fits the screen height so the whole phone is visible on laptops. */
+  .phone { --w: min(360px, calc((100svh - 150px) * 0.4613)); width: var(--w); flex: none; }
+  .phone .bezel { position: relative; width: 100%; border-radius: 52px; padding: 11px; background: linear-gradient(160deg, #2a2f2c, #141715 40%, #0e100f); box-shadow: 0 0 0 1px #2c312e, 0 40px 80px -30px rgba(0,0,0,.8), 0 0 120px -40px rgba(25,195,125,.25); }
+  .phone .screen { width: 100%; aspect-ratio: 393 / 852; border-radius: 42px; overflow: hidden; background: var(--bg); position: relative; }
+  .phone iframe { position: absolute; top: 0; left: 0; width: 393px; height: 852px; border: 0; transform-origin: 0 0; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .phone .cap { margin-top: 14px; text-align: center; font-size: 13px; color: var(--faint); }
+  .phone .cap b { color: var(--accent); font-weight: 500; }
+  .only-small { display: none; }
+
+  /* Sections */
+  section.ch { padding: 120px 0; border-top: 1px solid var(--line); }
+  .chead { display: grid; gap: 22px; margin-bottom: 56px; }
+  .chead .eyebrow { display: flex; gap: 12px; align-items: center; }
+
+  /* Why: people */
+  .people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .person { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .person .who { font: 500 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .person blockquote { margin: 0; font: 400 26px/1.15 var(--serif); }
+  .person p { color: var(--muted); font-size: 15px; }
+  .person .ask { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--accent); }
+
+  /* Problem: ledger */
+  .ledger { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: clamp(24px, 4vw, 44px); display: grid; gap: 28px; }
+  .ledger .row { display: grid; grid-template-columns: 210px minmax(0, 1fr) 120px; gap: 20px; align-items: center; }
+  .ledger .lbl { font-size: 15px; } .ledger .lbl small { display: block; color: var(--faint); font-size: 13px; }
+  .bar { height: 14px; border-radius: 999px; background: var(--raised); position: relative; overflow: hidden; }
+  .bar i { position: absolute; inset: 0 auto 0 0; border-radius: 999px; background: var(--muted); width: 0; transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
+  .bar.mid i { background: var(--text); } .bar.best i { background: var(--accent); } .bar.bank i { background: var(--warn); }
+  .ledger .amt { text-align: right; font: 500 18px var(--mono); }
+  .gap-callout { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; padding-top: 24px; border-top: 1px dashed var(--line); }
+  .gap-callout .big { font: 400 clamp(48px, 7vw, 76px)/1 var(--serif); color: var(--warn); }
+  .gap-callout p { color: var(--muted); max-width: 46ch; }
+  .note { font-size: 13px; color: var(--faint); margin-top: 18px; }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 16px; }
+  .fact { padding: 22px; border-radius: 20px; border: 1px solid var(--line); }
+  .fact h3 { font-size: 16px; margin-bottom: 6px; } .fact p { color: var(--muted); font-size: 15px; }
+
+  /* Mind: patterns */
+  .patterns { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .pattern { display: grid; grid-template-columns: 56px minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr); gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .pattern .n { font: 500 13px var(--mono); color: var(--faint); padding-top: 6px; }
+  .pattern h3 { font: 400 30px/1.05 var(--serif); }
+  .pattern h3 small { display: block; font: 400 14px/1.4 var(--sans); color: var(--faint); margin-top: 8px; }
+  .pattern .col span { display: block; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  .pattern .col p { font-size: 15px; color: var(--muted); }
+  .pattern .col.answer p { color: var(--text); }
+  .pattern .col.answer span { color: var(--accent); }
+
+  /* Motivations */
+  .motives { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+  .motive { padding: 30px 26px; border-radius: 24px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .motive .word { font: 400 46px/1 var(--serif); }
+  .motive .word em { color: var(--accent); font-style: italic; }
+  .motive p { color: var(--muted); font-size: 15px; }
+  .motive .means { font-size: 14px; color: var(--text); padding-top: 12px; border-top: 1px solid var(--line); }
+
+  /* Agenda */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); }
+  .compare-table th, .compare-table td { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .compare-table thead th { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+  .compare-table tbody th { font-weight: 500; white-space: nowrap; }
+  .compare-table td { color: var(--muted); }
+  .compare-table tr.us th, .compare-table tr.us td { color: var(--text); background: var(--accent-soft); }
+  .compare-table tr.us th { color: var(--accent); }
+  .compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: 0; }
+  .principles { display: grid; gap: 96px; margin-top: 96px; }
+  .principle { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 72px; align-items: center; }
+  .principle:nth-child(even) { grid-template-columns: 300px minmax(0, 1fr); }
+  .principle:nth-child(even) .shot { order: -1; }
+  .principle .txt { display: grid; gap: 16px; min-width: 0; }
+  .principle .k { font: 500 13px var(--mono); color: var(--accent); }
+  .principle h3 { font: 400 clamp(32px, 4vw, 44px)/1.05 var(--serif); }
+  .principle p { color: var(--muted); }
+  .principle ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .principle li { padding-left: 22px; position: relative; font-size: 15px; color: var(--muted); }
+  .principle li::before { content: ''; position: absolute; left: 0; top: .7em; width: 10px; height: 1px; background: var(--accent); }
+  .shot { border-radius: 36px; padding: 8px; background: linear-gradient(160deg, #2a2f2c, #121513); box-shadow: 0 0 0 1px #2c312e, 0 30px 60px -30px rgba(0,0,0,.8); }
+  .shot img { border-radius: 29px; }
+
+  /* Measure */
+  .metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+  .metric { padding: 28px; border-radius: 24px; border: 1px solid var(--line); display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .metric .q { font: 400 26px/1.15 var(--serif); }
+  .metric p { color: var(--muted); font-size: 15px; }
+  .metric .how { font: 400 13px/1.5 var(--mono); color: var(--faint); padding-top: 12px; border-top: 1px solid var(--line); }
+
+  /* Role */
+  .role { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 64px; }
+  .role dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .role dl div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .role dt { font: 500 12px/1.9 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .role dd { margin: 0; }
+
+  /* Closing */
+  .closing { padding: 140px 0 120px; text-align: center; border-top: 1px solid var(--line); }
+  .closing h2 { max-width: 16ch; margin: 0 auto 28px; }
+  .closing .ctas { justify-content: center; }
+  footer { padding: 32px 0 calc(40px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+  /* Floating "Try it full screen": sits just right of the hero phone, then stays put while you scroll. */
+  .fab { position: fixed; z-index: 40; top: 50%; transform: translateY(-50%); right: max(20px, calc((100vw - 1120px) / 2 - 92px)); width: 60px; height: 60px; border-radius: 30px; background: var(--accent); color: #04140C; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 12px 32px -8px rgba(25,195,125,.55), 0 0 0 1px rgba(255,255,255,.06) inset; transition: transform .2s ease, box-shadow .2s ease; }
+  .fab:hover { transform: translateY(-50%) scale(1.06); }
+  .fab:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+  .fab-label { position: absolute; right: calc(100% + 12px); white-space: nowrap; background: var(--raised); color: var(--text); font: 500 13px var(--sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); opacity: 0; transform: translateX(6px); transition: opacity .15s ease, transform .15s ease; pointer-events: none; }
+  .fab:hover .fab-label, .fab:focus-visible .fab-label { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .fab { top: auto; transform: none; bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 16px)); right: max(16px, env(safe-area-inset-right, 0px)); }
+    .fab:hover { transform: scale(1.06); }
+  }
+  @media (prefers-reduced-motion: reduce) { .fab, .fab-label { transition: none; } }
+
+  /* Full-screen app overlay: the full app, from onboarding, without leaving the page. */
+  .overlay { position: fixed; inset: 0; z-index: 50; background: color-mix(in srgb, #000 78%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: max(20px, env(safe-area-inset-top, 0px)) 20px max(20px, env(safe-area-inset-bottom, 0px)); opacity: 0; transition: opacity .2s ease; }
+  .overlay.open { opacity: 1; }
+  .overlay[hidden] { display: none; }
+  .ov-phone { --h: min(852px, calc(100svh - 64px)); border-radius: 52px; padding: 11px; background: linear-gradient(160deg, #2a2f2c, #141715 40%, #0e100f); box-shadow: 0 0 0 1px #2c312e, 0 40px 80px -30px rgba(0,0,0,.8); }
+  .ov-phone .scr { height: var(--h); aspect-ratio: 393 / 852; border-radius: 42px; overflow: hidden; position: relative; background: var(--bg); }
+  .ov-phone iframe { position: absolute; top: 0; left: 0; width: 393px; height: 852px; border: 0; transform-origin: 0 0; }
+
+  /* Close sits exactly where the floating button was; Restart appears below it once you're past the start. */
+  .ov-actions { position: fixed; z-index: 2; top: calc(50% - 30px); right: max(20px, calc((100vw - 1120px) / 2 - 92px)); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .close, .restart { position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); cursor: pointer; color: var(--text); background: var(--raised); }
+  .close { width: 60px; height: 60px; border-radius: 30px; }
+  .restart { width: 48px; height: 48px; border-radius: 24px; color: var(--muted); }
+  .restart[hidden] { display: none; }
+  .close:hover, .restart:hover { background: #252a27; color: var(--text); }
+  .close:focus-visible, .restart:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+  .close-label, .restart-label { display: none; }
+  .ov-actions .tip { position: absolute; right: calc(100% + 12px); white-space: nowrap; background: var(--raised); color: var(--text); font: 500 13px var(--sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); opacity: 0; transform: translateX(6px); transition: opacity .15s ease, transform .15s ease; pointer-events: none; }
+  .close:hover .tip, .restart:hover .tip, .close:focus-visible .tip, .restart:focus-visible .tip { opacity: 1; transform: none; }
+  @media (max-width: 900px) {
+    .overlay { padding: 0; background: var(--bg); }
+    .ov-phone { height: 100%; width: 100%; aspect-ratio: auto; border-radius: 0; padding: 0; background: none; box-shadow: none; }
+    .ov-phone .scr { border-radius: 0; height: 100%; width: 100%; aspect-ratio: auto; }
+    .ov-phone iframe { position: static; width: 100%; height: 100%; transform: none; }
+    /* Phone: a slim bar above the app holds the close button, so it never covers the app. */
+    .overlay { justify-content: flex-start; gap: 0; padding-top: env(safe-area-inset-top, 0px); }
+    .ov-actions { position: static; flex-direction: row; justify-content: space-between; align-self: stretch; height: 48px; padding: 0 8px; border-bottom: 1px solid var(--line); background: var(--bg); flex: none; }
+    .close, .restart { width: auto; height: 40px; border: 0; border-radius: 20px; background: transparent; gap: 8px; padding: 0 10px; font: 500 15px var(--sans); }
+    .restart { color: var(--accent); }
+    .close-label, .restart-label { display: inline; }
+    .ov-actions .tip { display: none; }
+    .ov-phone { flex: 1; height: auto; min-height: 0; }
+  }
+
+  /* Reveal */
+  .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } .bar i { transition: none; }  }
+
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .pattern { grid-template-columns: 40px minmax(0,1fr); gap: 14px 18px; }
+    .pattern .col { grid-column: 2; }
+    .motives { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 900px) {
+    .hero { padding: 28px 0 72px; }
+    .hero .grid { grid-template-columns: 1fr; gap: 48px; }
+    .phone { margin: 0 auto; --w: min(300px, 78vw); }
+    .only-big { display: none; } .only-small { display: block; }
+    .people, .facts, .metrics { grid-template-columns: 1fr; }
+    .principle, .principle:nth-child(even) { grid-template-columns: 1fr; gap: 32px; }
+    .principle .shot, .principle:nth-child(even) .shot { order: 0; max-width: 280px; }
+    .role { grid-template-columns: 1fr; gap: 40px; }
+    .ledger .row { grid-template-columns: 1fr auto; gap: 8px 16px; }
+    .ledger .row .bar { grid-column: 1 / -1; grid-row: 2; }
+    section.ch { padding: 88px 0; }
+    .principles { gap: 72px; margin-top: 72px; }
+  }
+  @media (max-width: 560px) {
+      .motives { grid-template-columns: 1fr; }
+    .role dl div { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+}
+
+/* While the full-screen app is open, the page behind it doesn't scroll and the floating button hides. */
+body.fq-locked { overflow: hidden; }
+body.fq-locked .fq .fab { display: none; }
+
+/* On the Fairmarq page, the portfolio's own header and page background switch to dark.
+   Next.js keeps a visited page hidden (display: none) after you leave; ignore it then. */
+body:has(.fq:not([style*="display: none"])) {
+  --background: #0b0d0c;
+  --foreground: #f2f4f3;
+  --muted: #9ba19d;
+  --line: #232725;
+  --surface: #151816;
+  color-scheme: dark;
+}
+.fq .back { display: inline-block; font-size: 14px; color: var(--muted); text-decoration: none; margin-bottom: 4px; }
+.fq .back:hover { color: var(--text); }
+.fq .disclaimer { font-size: 13px; color: var(--faint); padding-top: 32px; padding-bottom: 8px; }
+.fq h1, .fq h2 { font-family: var(--serif); }
