@@ -9,16 +9,13 @@ const screens = [
 
 /**
  * Homepage feature for the self-initiated Fairmarq project: a dark window into its story page.
- * The whole card is one link; hovering lifts the screens and brightens the call to action.
+ * Two links: the "View the story" text and the stack of screens. Hovering the screens fans
+ * them out and brightens the text link, so it's clear where they lead.
  */
 export function FairmarqFeature() {
   return (
     <section aria-labelledby="fairmarq" className="mx-auto mt-28 max-w-6xl px-6">
-      <Link
-        href="/work/fairmarq"
-        aria-label="Fairmarq: view the story"
-        className="group grid gap-12 overflow-hidden bg-[#0b0d0c] px-7 py-14 text-[#f2f4f3] outline-offset-4 sm:px-14 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-6"
-      >
+      <div className="grid gap-12 overflow-hidden bg-[#0b0d0c] px-7 py-14 text-[#f2f4f3] sm:px-14 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-6 [&:has(.fq-stack:hover)_.fq-cta]:text-[#19c37d] [&:has(.fq-stack:hover)_.fq-cta]:decoration-[#19c37d]">
         <div className="max-w-md">
           <p className="font-hand text-2xl text-[#9ba19d]">self-initiated</p>
           <h2 id="fairmarq" className="mt-1 font-sans text-4xl font-bold tracking-tight">
@@ -38,15 +35,22 @@ export function FairmarqFeature() {
               </li>
             ))}
           </ul>
-          <span className="mt-9 inline-flex items-center gap-2 text-sm text-[#9ba19d] underline decoration-[#2c312e] underline-offset-[6px] transition-colors group-hover:text-[#19c37d] group-hover:decoration-[#19c37d] group-focus-visible:text-[#19c37d]">
+          <Link
+            href="/work/fairmarq"
+            className="fq-cta group/cta mt-9 inline-flex items-center gap-2 text-sm text-[#9ba19d] underline decoration-[#2c312e] underline-offset-[6px] transition-colors hover:text-[#19c37d] hover:decoration-[#19c37d]"
+          >
             View the story
-            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+            <span aria-hidden="true" className="transition-transform group-hover/cta:translate-x-1">
               →
             </span>
-          </span>
+          </Link>
         </div>
 
-        <div className="relative mx-auto flex h-[420px] w-full max-w-[520px] items-center justify-center sm:h-[500px]">
+        <Link
+          href="/work/fairmarq"
+          aria-label="Fairmarq: view the story"
+          className="fq-stack group relative mx-auto flex h-[420px] w-full max-w-[520px] cursor-pointer items-center justify-center outline-offset-4 sm:h-[500px]"
+        >
           {screens.map((s, i) => (
             <div
               key={s.src}
@@ -61,8 +65,8 @@ export function FairmarqFeature() {
               <Image src={s.src} alt="" width={640} height={1387} className="rounded-[22px]" sizes="(min-width: 1024px) 260px, 45vw" />
             </div>
           ))}
-        </div>
-      </Link>
+        </Link>
+      </div>
     </section>
   );
 }
