@@ -176,11 +176,12 @@
   .r-s span { display: block; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
 
   /* Closing */
-  .closing { padding: 140px 0 120px; text-align: center; border-top: 1px solid var(--line); }
-  .closing h2 { max-width: 16ch; margin: 0 auto 28px; }
+  .closing { padding: 96px 0 72px; text-align: center; border-top: 1px solid var(--line); }
+  .closing h2 { max-width: 16ch; margin: 0 auto 22px; font-size: clamp(28px, 3.4vw, 40px); }
   .closing .ctas { justify-content: center; }
   footer { padding: 32px 0 calc(40px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); }
-  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+  footer .wrap span:first-child { font-style: italic; max-width: 70ch; }
 
   /* Floating "Try it full screen": sits just right of the hero phone, then stays put while you scroll. */
   .fab { position: fixed; z-index: 40; top: 50%; transform: translateY(-50%); right: max(20px, calc((100vw - 1120px) / 2 - 92px)); width: 60px; height: 60px; border-radius: 30px; background: var(--accent); color: #04140C; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 12px 32px -8px rgba(25,195,125,.55), 0 0 0 1px rgba(255,255,255,.06) inset; transition: transform .2s ease, box-shadow .2s ease; }
@@ -282,5 +283,5 @@ body:has(.fq:not([style*="display: none"])) {
 }
 .fq .back { display: inline-block; font-size: 14px; color: var(--muted); text-decoration: none; margin-bottom: 4px; }
 .fq .back:hover { color: var(--text); }
-.fq .disclaimer { font-size: 13px; color: var(--faint); padding-top: 32px; padding-bottom: 8px; }
+.fq .disclaimer { font-size: 13px; color: var(--faint); font-style: italic; text-align: center; max-width: 70ch; margin: 0 auto; padding-top: 32px; padding-bottom: 8px; }
 .fq h1, .fq h2 { font-family: var(--serif); }
