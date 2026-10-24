@@ -9,8 +9,8 @@ export function Metrics({
   return (
     <div className="my-10 grid gap-3 sm:grid-cols-3">
       {items.map((m) => (
-        <div key={m.label} className="rounded-3xl bg-highlight/10 p-6">
-          <p className="font-serif text-2xl whitespace-nowrap text-highlight">{m.value}</p>
+        <div key={m.label} className="rounded-3xl bg-brand/10 p-6">
+          <p className="font-serif text-2xl whitespace-nowrap text-brand">{m.value}</p>
           <p className="mt-1 text-sm text-muted">{m.label}</p>
         </div>
       ))}
@@ -21,9 +21,9 @@ export function Metrics({
 /** Highlighted insight, question or "How might we". */
 export function Callout({ label, children }: { label?: string; children: ReactNode }) {
   return (
-    <aside className="my-10 rounded-3xl border-l-4 border-accent bg-surface p-6 sm:p-8">
+    <aside className="my-10 rounded-3xl border-l-4 border-brand bg-surface p-6 sm:p-8">
       {label && (
-        <p className="mb-2 text-xs font-medium tracking-widest text-accent uppercase">
+        <p className="mb-2 text-xs font-medium tracking-widest text-brand uppercase">
           {label}
         </p>
       )}

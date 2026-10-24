@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Light-only theme: warm white, ink text, blue for actions, coral for highlights. */
+/* Light-only theme: warm white, ink text, blue for actions, green for highlights. */
 :root {
   --background: #fbfaf7;
   --foreground: #161514;
@@ -8,7 +8,7 @@
   --line: #e5e1d9;
   --surface: #f2efe9;
   --accent: #2f4bff;
-  --highlight: #ea5a3b;
+  --brand: #19c37d;
   color-scheme: light;
 }
 
@@ -19,7 +19,7 @@
   --color-line: var(--line);
   --color-surface: var(--surface);
   --color-accent: var(--accent);
-  --color-highlight: var(--highlight);
+  --color-brand: var(--brand);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-editors-note);

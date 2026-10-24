@@ -35,7 +35,7 @@ export function Toc({ items }: { items: { id: string; text: string }[] }) {
                   : "text-muted hover:text-foreground"
               }`}
             >
-              <span className={`font-mono text-xs leading-5 ${active === item.id ? "text-highlight" : ""}`}>
+              <span className={`font-mono text-xs leading-5 ${active === item.id ? "text-brand" : ""}`}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               {item.text}

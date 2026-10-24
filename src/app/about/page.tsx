@@ -108,7 +108,7 @@ export default function AboutPage() {
       </Link>
       <section className="mt-6 grid gap-12 md:grid-cols-[1fr_320px] md:items-start">
         <div>
-          <p className="font-hand text-2xl text-highlight">about me</p>
+          <p className="font-hand text-2xl text-brand">about me</p>
           <h1 className="mt-4 font-serif text-5xl leading-[1.05] sm:text-6xl">
             An observer by nature.{" "}
             <span className="font-serif font-normal italic">A thinker by instinct.</span>
@@ -181,7 +181,7 @@ export default function AboutPage() {
         <ol className="grid border-b border-line sm:grid-cols-2">
           {lessons.map((l, i) => (
             <li key={l.title} className="py-8 pr-8">
-              <p className="font-mono text-sm text-highlight">{String(i + 1).padStart(2, "0")}</p>
+              <p className="font-mono text-sm text-brand">{String(i + 1).padStart(2, "0")}</p>
               <p className="mt-2 text-xl font-medium">{l.title}</p>
               <p className="mt-2 leading-relaxed text-muted">{l.detail}</p>
             </li>

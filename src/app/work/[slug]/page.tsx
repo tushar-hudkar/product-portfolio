@@ -67,8 +67,8 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         >
           <div>
             <p className="flex flex-wrap items-center gap-2 text-xs tracking-widest text-muted uppercase">
-              <span className="inline-flex items-center gap-1.5 text-highlight">
-                <span className="size-1.5 rounded-full bg-highlight" />
+              <span className="inline-flex items-center gap-1.5 text-brand">
+                <span className="size-1.5 rounded-full bg-brand" />
                 {project.company}
               </span>
               · {project.year} · {project.platform}
@@ -80,13 +80,13 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           </div>
           <div className="space-y-4">
             {project.highlight && (
-              <div className="rounded-3xl bg-highlight/10 p-6">
-                <p className="font-serif text-3xl whitespace-nowrap text-highlight sm:text-4xl">{project.highlight.value}</p>
+              <div className="rounded-3xl bg-brand/10 p-6">
+                <p className="font-serif text-3xl whitespace-nowrap text-brand sm:text-4xl">{project.highlight.value}</p>
                 <p className="mt-1 text-sm text-foreground/70">{project.highlight.label}</p>
                 {impactId && (
                   <a
                     href={`#${impactId}`}
-                    className="mt-4 inline-block text-sm text-highlight underline underline-offset-4"
+                    className="mt-4 inline-block text-sm text-brand underline underline-offset-4"
                   >
                     See the impact data ↓
                   </a>
@@ -150,7 +150,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           href={`/work/${next.slug}`}
           className="group grid gap-4 rounded-3xl bg-surface p-8 transition-colors hover:bg-[#ebe7df] sm:p-12"
         >
-          <p className="font-hand text-2xl text-highlight">next case study</p>
+          <p className="font-hand text-2xl text-brand">next case study</p>
           <p className="font-serif text-3xl leading-tight sm:text-5xl">
             {next.title}{" "}
             <span className="inline-block text-accent transition-transform group-hover:translate-x-1">→</span>

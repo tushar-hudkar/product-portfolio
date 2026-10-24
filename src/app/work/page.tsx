@@ -14,7 +14,7 @@ export default function WorkPage() {
       <Link href="/" className="text-sm text-muted hover:text-foreground">
         ← Back to home
       </Link>
-      <p className="mt-6 font-hand text-2xl text-highlight">selected work</p>
+      <p className="mt-6 font-hand text-2xl text-brand">selected work</p>
       <h1 className="max-w-3xl font-serif text-5xl leading-tight sm:text-6xl">
         Case studies, from research to measurable outcomes.
       </h1>
@@ -25,7 +25,7 @@ export default function WorkPage() {
       </ol>
 
       {/* Self-initiated work sits apart from the client case studies. */}
-      <p className="mt-24 font-hand text-2xl text-highlight">self-initiated</p>
+      <p className="mt-24 font-hand text-2xl text-brand">self-initiated</p>
       <ul className="mt-4">
         <li className="border-y border-line">
           <Link

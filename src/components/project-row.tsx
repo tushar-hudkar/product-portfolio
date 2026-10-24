@@ -8,7 +8,7 @@ export function ProjectRow({ project, index }: { project: Project; index: number
         href={`/work/${project.slug}`}
         className="group grid gap-6 py-8 transition-colors sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-8 sm:px-4 sm:hover:bg-surface/70"
       >
-        <span className="font-serif text-3xl text-[#cfc9be] transition-colors group-hover:text-highlight">
+        <span className="font-serif text-3xl text-[#cfc9be] transition-colors group-hover:text-brand">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
@@ -21,7 +21,7 @@ export function ProjectRow({ project, index }: { project: Project; index: number
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{project.summary}</p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {project.highlight && (
-              <span className="rounded-full bg-highlight/10 px-3 py-1 text-xs font-medium text-highlight">
+              <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
                 {project.highlight.value} {project.highlight.label.toLowerCase()}
               </span>
             )}

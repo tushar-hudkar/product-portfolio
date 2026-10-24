@@ -16,7 +16,7 @@ export async function Footer() {
   return (
     <footer className="mt-32 bg-[#161514] text-[#f2efe9]">
       <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-        <p className="font-hand text-3xl text-highlight">say hello</p>
+        <p className="font-hand text-3xl text-brand">say hello</p>
         <h2 className="mt-2 font-serif text-5xl sm:text-7xl">Let&apos;s Connect</h2>
         <p className="mt-4 text-[#a8a39b]">
           Always up for collaborations, projects, or anything design!

@@ -34,20 +34,19 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-20 sm:pt-24 lg:grid-cols-[1.25fr_1fr] lg:items-center">
         <div className="reveal">
-          <p className="-rotate-2 font-hand text-3xl text-highlight">Hi, I&apos;m Tushar Hudkar.</p>
+          <p className="-rotate-2 font-hand text-3xl text-brand">Hi, I&apos;m Tushar Hudkar.</p>
           <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight sm:text-7xl">
-            I design products people <em className="text-accent">understand</em> — and systems
+            I design products people <em className="text-brand">understand</em> — and systems
             that&nbsp;last.
           </h1>
           <p className="mt-8 max-w-xl leading-relaxed text-muted">
             10+ years turning complex B2B and B2C products into experiences that drive real
-            outcomes — now with AI built into how I research, prototype and ship. I work at the
-            intersection of user needs, business strategy, and technical feasibility.
+            outcomes. I integrate AI into my process and continuously evolve how I design.
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
             <a
               href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2.5 text-sm hover:border-foreground"
+              className="inline-flex items-center gap-2 text-sm decoration-1 underline-offset-4 hover:text-accent hover:underline"
             >
               <MailIcon /> Contact
             </a>
@@ -55,7 +54,7 @@ export default function Home() {
               href={site.linkedin || "#"}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2.5 text-sm hover:border-foreground"
+              className="inline-flex items-center gap-2 text-sm decoration-1 underline-offset-4 hover:text-accent hover:underline"
             >
               <LinkedInIcon /> LinkedIn
             </a>
@@ -70,7 +69,7 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-6xl scroll-mt-20 px-6 pt-28">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="font-hand text-2xl text-highlight">selected work</p>
+            <p className="font-hand text-2xl text-brand">selected work</p>
             <h2 className="font-serif text-5xl">Case studies</h2>
           </div>
           <p className="max-w-xs text-right text-sm text-muted">
@@ -111,7 +110,7 @@ export default function Home() {
 
       {/* Philosophy */}
       <section className="mx-auto max-w-6xl px-6 pt-32">
-        <p className="font-hand text-2xl text-highlight">who I am as a designer</p>
+        <p className="font-hand text-2xl text-brand">who I am as a designer</p>
         <h2 className="max-w-3xl font-serif text-5xl leading-tight">
           My design philosophy — and what I&apos;ve learned along the way.
         </h2>
@@ -137,7 +136,7 @@ export default function Home() {
 
       <section className="mx-auto mt-24 max-w-6xl px-6">
         <div className="bg-[#161514] px-7 py-14 text-[#f2efe9] sm:px-14">
-          <p className="font-hand text-2xl text-highlight">the questions I keep asking myself</p>
+          <p className="font-hand text-2xl text-brand">the questions I keep asking myself</p>
           <ul className="mt-8 space-y-8">
             {questions.map((q) => (
               <li key={q} className="border-b border-[#2c2a27] pb-8 font-serif text-[#f2efe9]/65 transition-colors duration-300 hover:text-[#f2efe9] text-3xl leading-snug italic last:border-0 last:pb-0 sm:text-4xl">
