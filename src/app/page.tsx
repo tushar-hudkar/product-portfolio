@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { companies, site } from "@/lib/site";
-import { projects } from "@/lib/projects";
-import { AiProcess } from "@/components/ai-process";
+import { ProcessSteps } from "@/components/process-steps";
+import { TwinkleSquares } from "@/components/twinkle-squares";
 import { FairmarqFeature } from "@/components/fairmarq-feature";
-import { ProjectRow } from "@/components/project-row";
+import { CaseStudies } from "@/components/case-studies/case-studies";
 import { LinkedInIcon, MailIcon } from "@/components/icons";
 
 const philosophy = [
@@ -31,57 +31,47 @@ const questions = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-20 sm:pt-24 lg:grid-cols-[1.25fr_1fr] lg:items-center">
-        <div className="reveal">
-          <p className="-rotate-2 font-hand text-3xl text-brand">Hi, I&apos;m Tushar Hudkar.</p>
-          <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight sm:text-7xl">
-            I design products people <em className="text-brand">understand</em> — and systems
-            that&nbsp;last.
-          </h1>
-          <p className="mt-8 max-w-xl leading-relaxed text-muted">
-            10+ years turning complex B2B and B2C products into experiences that drive real
-            outcomes. I integrate AI into my process and continuously evolve how I design.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
-            <a
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 text-sm decoration-1 underline-offset-4 hover:text-accent hover:underline"
-            >
-              <MailIcon /> Contact
-            </a>
-            <a
-              href={site.linkedin || "#"}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm decoration-1 underline-offset-4 hover:text-accent hover:underline"
-            >
-              <LinkedInIcon /> LinkedIn
-            </a>
-          </div>
+      {/* Hero: dark, in the Fairmarq palette, over a slowly twinkling square-dot field. */}
+      <section data-dark-hero className="dark-scope relative isolate overflow-hidden bg-background text-foreground">
+        <div aria-hidden="true" className="absolute inset-0 -z-10">
+          <TwinkleSquares />
         </div>
-        <div className="reveal [animation-delay:150ms]">
-          <AiProcess />
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-24 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-20">
+          <div className="reveal">
+            <p className="-rotate-2 font-hand text-3xl text-brand">Hi, I&apos;m Tushar Hudkar.</p>
+            <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight sm:text-7xl">
+              I design products people <em className="text-brand">understand</em> — and systems
+              that&nbsp;last.
+            </h1>
+            <p className="mt-8 max-w-xl leading-relaxed text-muted">
+              10+ years turning complex B2B and B2C products into experiences that drive real
+              outcomes. I integrate AI into my process and continuously evolve how I design.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-2 text-sm text-muted decoration-1 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+              >
+                <MailIcon /> Contact
+              </a>
+              <a
+                href={site.linkedin || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted decoration-1 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+              >
+                <LinkedInIcon /> LinkedIn
+              </a>
+            </div>
+          </div>
+          <div className="reveal [animation-delay:150ms]">
+            <ProcessSteps />
+          </div>
         </div>
       </section>
 
       {/* Case studies */}
-      <section id="work" className="mx-auto max-w-6xl scroll-mt-20 px-6 pt-28">
-        <div className="mb-10 flex items-end justify-between gap-6">
-          <div>
-            <p className="font-hand text-2xl text-brand">selected work</p>
-            <h2 className="font-serif text-5xl">Case studies</h2>
-          </div>
-          <p className="max-w-xs text-right text-sm text-muted">
-            AI products for e-commerce — from research to measurable outcomes.
-          </p>
-        </div>
-        <ol>
-          {projects.map((project, i) => (
-            <ProjectRow key={project.slug} project={project} index={i} />
-          ))}
-        </ol>
-      </section>
+      <CaseStudies />
 
       {/* Fairmarq: self-initiated project */}
       <FairmarqFeature />
@@ -111,7 +101,7 @@ export default function Home() {
       {/* Philosophy */}
       <section className="mx-auto max-w-6xl px-6 pt-32">
         <p className="font-hand text-2xl text-brand">who I am as a designer</p>
-        <h2 className="max-w-3xl font-serif text-5xl leading-tight">
+        <h2 className="font-serif text-5xl leading-tight">
           My design philosophy — and what I&apos;ve learned along the way.
         </h2>
         <div className="mt-12 grid divide-y divide-line lg:grid-cols-3 lg:divide-x lg:divide-y-0">

@@ -8,14 +8,17 @@ const screens = [
 ];
 
 /**
- * Homepage feature for the self-initiated Fairmarq project: a dark window into its story page.
+ * Homepage feature for the self-initiated Fairmarq project: a full-width dark band leading to its story page.
  * Two links: the "View the story" text and the stack of screens. Hovering the screens fans
  * them out and brightens the text link, so it's clear where they lead.
  */
 export function FairmarqFeature() {
   return (
-    <section aria-labelledby="fairmarq" className="mx-auto mt-28 max-w-6xl px-6">
-      <div className="grid gap-12 overflow-hidden bg-[#0b0d0c] px-7 py-14 text-[#f2f4f3] sm:px-14 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-6 [&:has(.fq-stack:hover)_.fq-cta]:text-[#19c37d] [&:has(.fq-stack:hover)_.fq-cta]:decoration-[#19c37d]">
+    <section
+      aria-labelledby="fairmarq"
+      className="mt-28 overflow-hidden bg-[#0b0d0c] text-[#f2f4f3] [&:has(.fq-stack:hover)_.fq-cta]:text-[#19c37d] [&:has(.fq-stack:hover)_.fq-cta]:decoration-[#19c37d]"
+    >
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-6">
         <div className="max-w-md">
           <p className="font-hand text-2xl text-[#9ba19d]">self-initiated</p>
           <h2 id="fairmarq" className="mt-1 font-sans text-4xl font-bold tracking-tight">

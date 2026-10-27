@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
+import { HeaderTheme } from "./header-theme";
 import { LinkedInIcon, MailIcon } from "./icons";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line/70 bg-background/85 backdrop-blur">
+    <header className="header sticky top-0 z-40 border-b border-line/70 bg-background/85 backdrop-blur transition-colors duration-300">
+      <HeaderTheme />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
