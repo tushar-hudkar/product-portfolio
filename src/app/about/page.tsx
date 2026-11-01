@@ -136,14 +136,30 @@ export default function AboutPage() {
             </a>
           )}
         </div>
-        <Image
-          src="/about/my-photo.webp"
-          alt="Portrait of Tushar Hudkar"
-          width={576}
-          height={728}
-          priority
-          className="w-full max-w-xs rounded-3xl bg-[#111] object-cover"
-        />
+        {/* Black and white at rest; on hover the colour photo (same shot) fades in over it.
+            The sources are 1200px masters; Next serves 640/750/1080px versions (q85) to fit
+            the 320px slot at 1x–3x screens, so each photo is compressed only once. */}
+        <div className="group relative w-full max-w-xs overflow-hidden rounded-3xl bg-[#111]">
+          <Image
+            src="/about/my-photo-bw.webp"
+            alt="Portrait of Tushar Hudkar"
+            width={1200}
+            height={1600}
+            sizes="320px"
+            quality={85}
+            priority
+            className="block w-full"
+          />
+          <Image
+            src="/about/my-photo-colour.webp"
+            alt=""
+            width={1200}
+            height={1600}
+            sizes="320px"
+            quality={85}
+            className="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
+          />
+        </div>
       </section>
 
       <section className="mt-32">

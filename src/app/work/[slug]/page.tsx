@@ -7,6 +7,7 @@ import GithubSlugger from "github-slugger";
 import { Figure } from "@/components/figure";
 import { Toc } from "@/components/toc";
 import { getNextProject, getProject, projects } from "@/lib/projects";
+import { site } from "@/lib/site";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -21,7 +22,8 @@ export async function generateMetadata({
   return {
     title: project.shortTitle,
     description: project.summary,
-    openGraph: { images: [project.cover] },
+    // Replaces the layout's openGraph, so siteName is repeated (LinkedIn shows it under the title).
+    openGraph: { siteName: site.name, images: [project.cover] },
   };
 }
 

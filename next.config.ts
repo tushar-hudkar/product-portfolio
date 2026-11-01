@@ -33,6 +33,8 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+  // 85 for the About portrait (the default 75 softens skin and hair).
+  images: { qualities: [75, 85] },
   cacheComponents: true,
   partialPrefetching: true,
   pageExtensions: ["ts", "tsx", "md", "mdx"],
