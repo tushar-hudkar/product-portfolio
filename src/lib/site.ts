@@ -7,8 +7,9 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/tushar-hudkar",
   resume: "https://drive.google.com/file/d/1tPgs962U7wxhh3Rd9E4JuM13_glUse5v/view?usp=sharing",
   url: "https://tusharhudkar.vercel.app",
+  // The resume summary's first sentence: Google shows about 155 characters.
   description:
-    "Senior Product Designer & UX Lead with 10+ years designing AI-powered B2B and B2C products that drive growth — and systems that sustain it.",
+    "Senior Product Designer and UX lead with 10+ years shaping AI-powered B2B SaaS, e-commerce and consumer products for web and mobile.",
 };
 
 export const nav = [

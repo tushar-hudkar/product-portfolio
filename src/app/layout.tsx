@@ -36,7 +36,8 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
-  // The preview image itself is src/app/opengraph-image.tsx.
+  // Fallback for pages without their own; each page sets a complete set via pageMetadata
+  // (src/lib/metadata.ts). The preview image itself is src/app/opengraph-image.jpg.
   openGraph: {
     title: `${site.name} — ${site.role}`,
     description: site.description,

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { CopyEmail } from "@/components/copy-email";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: `Get in touch with ${site.name}.`,
-};
+  description: `Get in touch with ${site.name}, ${site.role}.`,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

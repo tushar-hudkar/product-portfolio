@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/metadata";
 import { companies, site } from "@/lib/site";
 import { ProcessSteps } from "@/components/process-steps";
 import { TwinkleSquares } from "@/components/twinkle-squares";
 import { FairmarqFeature } from "@/components/fairmarq-feature";
 import { CaseStudies } from "@/components/case-studies/case-studies";
 import { LinkedInIcon, MailIcon } from "@/components/icons";
+
+export const metadata: Metadata = pageMetadata({ description: site.description, path: "/" });
 
 const philosophy = [
   [

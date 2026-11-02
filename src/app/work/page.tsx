@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { ProjectRow } from "@/components/project-row";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
   description: "Case studies in AI-powered product design for e-commerce teams, and a self-initiated fintech project.",
-};
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (

@@ -7,7 +7,7 @@ import GithubSlugger from "github-slugger";
 import { Figure } from "@/components/figure";
 import { Toc } from "@/components/toc";
 import { getNextProject, getProject, projects } from "@/lib/projects";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -19,12 +19,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return {
+  return pageMetadata({
     title: project.shortTitle,
     description: project.summary,
-    // Replaces the layout's openGraph, so siteName is repeated (LinkedIn shows it under the title).
-    openGraph: { siteName: site.name, images: [project.cover] },
-  };
+    path: `/work/${slug}`,
+    images: [project.cover],
+  });
 }
 
 // Section list for the contents sidebar; ids match rehype-slug's output.

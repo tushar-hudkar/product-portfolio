@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
-  description: `About ${site.name} — lessons, experience and writing.`,
-};
+  description: `About ${site.name}: experience, lessons from 10+ years of product design, and writing.`,
+  path: "/about",
+});
 
 const lessons = [
   {
@@ -31,48 +33,63 @@ const lessons = [
   },
 ];
 
-const experience = [
+// Matches the resume and LinkedIn (Nov 2025): titles, dates and points. `freelance` adds a tag beside the company.
+const experience: { period: string; role: string; company: string; freelance?: boolean; label: string; points: string[] }[] = [
+  {
+    period: "Nov 2025 – Present",
+    role: "Product Design Consultant",
+    company: "Maayka",
+    freelance: true,
+    label: "Role",
+    points: [
+      "Led user research and interviews for a premium hyperlocal marketplace, to understand the target market and shape the product direction.",
+      "Partnered with the founders and team on business strategy, identifying where design can drive growth and trust.",
+      "Developed product concepts from research insights, from early ideas to design direction.",
+    ],
+  },
   {
     period: "Dec 2021 – Mar 2025",
     role: "Senior Product Designer",
     company: "Dresma",
-    label: "Business impact",
+    label: "Business impact · Sep 2023 – Nov 2024",
     points: [
-      "Drove 220% growth in Average Monthly Users (AMU).",
-      "Reduced web app churn from 75% to 54%.",
-      "Improved activation rate from 28% to 64%.",
-      "Increased conversion rate from 0.8% to 1.4%.",
+      "220% growth in average monthly users.",
+      "Churn down from 75% to 54%.",
+      "Conversion up from 0.8% to 1.4%.",
     ],
   },
   {
-    period: "Sep 2021 – Dec 2021",
-    role: "Senior UX Designer",
-    company: "Codvo",
-    label: "Business outcomes",
+    period: "Sep 2021 – Nov 2021",
+    role: "Senior UX Engineer",
+    company: "Codvo.ai",
+    freelance: true,
+    label: "Role",
     points: [
-      "Reduced operational costs by contributing to the design and rollout of an employee management system.",
-      "Built a detailed Figma design system for the tool to keep it consistent and ready to scale.",
+      "Researched, designed and tested a hiring platform built for engineers and software developers.",
+      "Designed the first phase of an employee management system, with a Figma component library for consistency.",
     ],
   },
   {
-    period: "May 2018 – Sep 2021",
+    period: "May 2018 – Aug 2021",
     role: "Senior UX Designer",
-    company: "Angara E-commerce",
+    company: "Angara Ecommerce",
     label: "Business impact",
     points: [
-      "Increased conversion rates by 1.5–2.5%, varying with seasonal and festival peaks.",
-      "Grew average session duration from 2–3 minutes to 4–5 minutes.",
-      "Reduced cart abandonment from 70–75% to 50–55%.",
+      "Raised conversion from ~1.5% to ~2.5% across key journeys, varying with seasonal and festival peaks.",
+      "Reduced cart abandonment from 70–75% to 50–55% by redesigning cart and checkout.",
+      "Increased average session duration from 2–3 to 4–5 minutes.",
     ],
   },
   {
     period: "Dec 2016 – Apr 2018",
     role: "UX Designer & Front-End Developer",
     company: "Foodraveller",
-    label: "Achievements",
+    label: "Role",
     points: [
-      "Designed visual layouts aligned with brand guidelines and WCAG accessibility standards, and built them with robust cross-browser support.",
-      "Partnered with a graphic designer on motion graphics and micro-interactions across web and mobile.",
+      "Designed and built the complete UI for a responsive web app, from research and wireframes to front-end code.",
+      "Designed gamification features to drive user engagement.",
+      "Built to WCAG accessibility standards with cross-browser support.",
+      "Used analytics and qualitative testing to guide design decisions.",
     ],
   },
   {
@@ -81,9 +98,8 @@ const experience = [
     company: "Onething Design",
     label: "Role",
     points: [
-      "Ran research that generated new product ideas and delivered concept-driven designs across all project phases.",
-      "Observed and interviewed users to understand and document their needs.",
-      "Facilitated design reviews with internal and external teams to confirm solutions met product goals.",
+      "Worked on client projects at a UX design agency, covering the full product design process.",
+      "User research through observation and interviews, concept design, and front-end builds in JavaScript and CSS frameworks.",
     ],
   },
 ];
@@ -126,13 +142,17 @@ export default function AboutPage() {
             </p>
           </div>
           {site.resume && (
+            // Text link, like the homepage's "Read case study →": the underline darkens and the arrow nudges.
             <a
               href={site.resume}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-block rounded-full bg-foreground px-5 py-2.5 text-sm text-background hover:opacity-85"
+              className="group/cta mt-8 inline-flex items-center gap-2 text-base text-foreground underline decoration-line underline-offset-[6px] transition-colors hover:decoration-foreground"
             >
-              View resume ↗
+              View resume
+              <span aria-hidden="true" className="transition-transform group-hover/cta:-translate-y-0.5 group-hover/cta:translate-x-0.5">
+                ↗
+              </span>
             </a>
           )}
         </div>
@@ -175,7 +195,12 @@ export default function AboutPage() {
               <div>
                 <p className="text-sm text-muted">{job.period}</p>
                 <p className="mt-2 font-medium">{job.role}</p>
-                <p className="text-muted">{job.company}</p>
+                <p className="flex flex-wrap items-center gap-2 text-muted">
+                  {job.company}
+                  {job.freelance && (
+                    <span className="rounded-full border border-line px-2 py-0.5 text-xs">Freelance</span>
+                  )}
+                </p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted">{job.label}</p>
