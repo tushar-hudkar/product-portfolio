@@ -31,7 +31,7 @@ export default function ContactPage() {
             <CopyEmail email={site.email} className="border-line hover:border-foreground" />
             <a
               href={`mailto:${site.email}?subject=Hello%20Tushar`}
-              className="rounded-full bg-accent px-4 py-2 text-sm text-white hover:opacity-85"
+              className="rounded-full bg-foreground px-4 py-2 text-sm text-background hover:opacity-85"
             >
               Write an email →
             </a>
@@ -42,14 +42,14 @@ export default function ContactPage() {
           <ul className="mt-3 space-y-3 text-lg">
             {site.linkedin && (
               <li>
-                <a href={site.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <a href={site.linkedin} target="_blank" rel="noreferrer" className="text-muted transition-colors hover:text-foreground">
                   LinkedIn ↗
                 </a>
               </li>
             )}
             {site.resume && (
               <li>
-                <a href={site.resume} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <a href={site.resume} target="_blank" rel="noreferrer" className="text-muted transition-colors hover:text-foreground">
                   Resume ↗
                 </a>
               </li>

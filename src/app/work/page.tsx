@@ -54,7 +54,7 @@ export default function WorkPage() {
                 ))}
               </div>
             </div>
-            <span aria-hidden className="hidden text-2xl text-muted transition-all group-hover:translate-x-1 group-hover:text-accent sm:block">
+            <span aria-hidden className="hidden text-2xl text-muted transition-all group-hover:translate-x-1 group-hover:text-foreground sm:block">
               →
             </span>
           </Link>

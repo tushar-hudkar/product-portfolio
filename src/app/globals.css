@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-/* Light-only theme: warm white, ink text, blue for actions, green for highlights. */
+/* Light-only theme: warm white, ink text, blue for actions, green for highlights.
+   The site's own green is a pair: --brand is deep on light backgrounds (4.8:1 on the warm white) and
+   brighter inside dark sections (see .dark-scope). Fairmarq keeps its own mint, #19c37d. */
 :root {
   --background: #fbfaf7;
   --foreground: #161514;
@@ -8,7 +10,9 @@
   --line: #e5e1d9;
   --surface: #f2efe9;
   --accent: #2f4bff;
-  --brand: #19c37d;
+  --brand: #0d8050;
+  /* Header name (the logo) follows the brand green. */
+  --wordmark: var(--brand);
   color-scheme: light;
 }
 
@@ -72,7 +76,13 @@ body {
   --foreground: #f2f4f3;
   --muted: #9ba19d;
   --line: #2c312e;
+  --brand: #2fbf7f;
+  --wordmark: var(--brand);
   color: var(--foreground);
+}
+/* Over the dark hero the header is the same solid black with no dividing line, so they read as one. */
+.header[data-over-dark] {
+  border-color: transparent;
 }
 
 /* Hero backdrop: the square-dot field fades out toward every edge. */
@@ -157,4 +167,44 @@ body {
     0% { transform: scale(1); opacity: 0.9; }
     100% { transform: scale(1.75); opacity: 0; }
   }
+}
+
+/* Footer: the Copy button appears when the email row is hovered or the button has keyboard focus.
+   Only on devices with a mouse; touch screens always show it. */
+@media (hover: hover) {
+  .copy-reveal { opacity: 0; transition: opacity 0.2s, color 0.2s, border-color 0.2s; }
+  .email-row:hover .copy-reveal,
+  .copy-reveal:focus-visible { opacity: 1; }
+}
+
+/* Footer name: grey text with a soft green spotlight that follows the cursor on hover.
+   --x/--y (cursor position) and --spot (0 → 1 on hover) are set by FooterName; registering them
+   lets the spotlight glide and fade instead of jumping. */
+@property --x { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --y { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --spot { syntax: "<number>"; inherits: false; initial-value: 0; }
+.name-spot {
+  color: transparent;
+  background-image:
+    radial-gradient(
+      circle 22vw at var(--x) var(--y),
+      rgb(47 191 127 / calc(var(--spot) * 1)) 0%,
+      rgb(47 191 127 / calc(var(--spot) * 0.55)) 30%,
+      rgb(242 244 243 / calc(var(--spot) * 0.15)) 60%,
+      transparent 80%
+    ),
+    linear-gradient(rgb(242 244 243 / 0.4), rgb(242 244 243 / 0.4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: --x 0.25s ease-out, --y 0.25s ease-out, --spot 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .name-spot { transition: none; }
+}
+
+/* Homepage hero fills the window below the 65px header, with its content centred vertically.
+   Only on wide screens tall enough for it (short laptop windows and phones keep the normal padding),
+   and capped so very tall monitors don't get a cavernous hero. */
+@media (min-width: 1024px) and (min-height: 700px) {
+  .hero-full { min-height: min(calc(100svh - 65px), 1100px); }
 }

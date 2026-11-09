@@ -9,7 +9,7 @@ export default function NotFound() {
       </h1>
       <Link
         href="/"
-        className="mt-8 inline-block underline decoration-1 underline-offset-4 hover:text-accent"
+        className="mt-8 inline-block underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-foreground"
       >
         Back home →
       </Link>

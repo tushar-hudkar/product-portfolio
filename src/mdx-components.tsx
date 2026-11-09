@@ -20,11 +20,11 @@ const components: MDXComponents = {
   li: (props) => <li className="leading-relaxed text-foreground/85" {...props} />,
   strong: (props) => <strong className="font-medium text-foreground" {...props} />,
   a: (props) => (
-    <a className="underline decoration-1 underline-offset-4 hover:text-accent" {...props} />
+    <a className="underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-foreground" {...props} />
   ),
   blockquote: (props) => (
     <blockquote
-      className="my-8 border-l-2 border-accent pl-5 font-serif text-xl italic"
+      className="my-8 border-l-2 border-brand pl-5 font-serif text-xl italic"
       {...props}
     />
   ),

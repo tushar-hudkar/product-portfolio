@@ -4,9 +4,11 @@ import { useState } from "react";
 
 export function CopyEmail({
   email,
+  label,
   className = "",
 }: {
   email: string;
+  label?: string; // when set, the button shows just this (e.g. "Copy") instead of the address
   className?: string;
 }) {
   const [copied, setCopied] = useState(false);
@@ -27,10 +29,18 @@ export function CopyEmail({
       onClick={copy}
       className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors ${className}`}
     >
-      <span>{email}</span>
-      <span aria-live="polite" className="opacity-60 group-hover:opacity-100">
-        {copied ? "Copied ✓" : "Copy"}
-      </span>
+      {label ? (
+        <span aria-live="polite" aria-label={copied ? "Email copied" : `Copy ${email}`}>
+          {copied ? "Copied ✓" : label}
+        </span>
+      ) : (
+        <>
+          <span>{email}</span>
+          <span aria-live="polite" className="opacity-60 group-hover:opacity-100">
+            {copied ? "Copied ✓" : "Copy"}
+          </span>
+        </>
+      )}
     </button>
   );
 }

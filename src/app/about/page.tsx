@@ -242,12 +242,12 @@ export default function AboutPage() {
                   href={w.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between gap-6 py-8 transition-colors hover:text-accent"
+                  className="group flex items-center justify-between gap-6 py-8 transition-colors"
                 >
                   <span className="font-serif text-xl leading-snug sm:text-2xl">
                     {w.title}
                   </span>
-                  <span className="flex shrink-0 items-center gap-2 text-sm text-muted transition-colors group-hover:text-accent">
+                  <span className="flex shrink-0 items-center gap-2 text-sm text-muted transition-colors group-hover:text-foreground">
                     <span className="hidden sm:inline">Read on Medium</span>
                     <span className="text-xl transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1">
                       ↗

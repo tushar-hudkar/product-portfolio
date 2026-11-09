@@ -88,7 +88,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
                 {impactId && (
                   <a
                     href={`#${impactId}`}
-                    className="mt-4 inline-block text-sm text-brand underline underline-offset-4"
+                    className="mt-4 inline-block text-sm text-foreground underline decoration-line underline-offset-4 transition-colors hover:decoration-foreground"
                   >
                     See the impact data ↓
                   </a>
@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
               <dt className="text-xs tracking-widest text-muted uppercase">Links</dt>
               <dd className="mt-1.5 flex flex-wrap gap-x-5 gap-y-1 text-sm">
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noreferrer" className="text-accent underline underline-offset-4">
+                  <a href={project.link} target="_blank" rel="noreferrer" className="text-foreground underline decoration-line underline-offset-4 hover:decoration-foreground">
                     Web app ↗
                   </a>
                 )}
@@ -155,7 +155,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           <p className="font-hand text-2xl text-brand">next case study</p>
           <p className="font-serif text-3xl leading-tight sm:text-5xl">
             {next.title}{" "}
-            <span className="inline-block text-accent transition-transform group-hover:translate-x-1">→</span>
+            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </p>
           <p className="max-w-2xl text-muted">{next.summary}</p>
         </Link>

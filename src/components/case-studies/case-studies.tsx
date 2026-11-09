@@ -108,7 +108,11 @@ function Title({ p, large }: { p: Project; large?: boolean }) {
         large ? "text-[1.75rem] leading-[1.12] sm:text-[2.5rem] sm:leading-[1.08]" : "text-[1.75rem] leading-[1.12] sm:text-[2.25rem] sm:leading-[1.1]"
       }`}
     >
-      {p.title}
+      {/* Homepage cards use the shorter title when there is one; case study pages keep the full one.
+          The title links to the case study too; hovering it darkens the CTA underline like the visual does. */}
+      <Link href={`/work/${p.slug}`} className="cs-title">
+        {p.cardTitle ?? p.title}
+      </Link>
     </h3>
   );
 }
@@ -143,7 +147,7 @@ function Cta({ p }: { p: Project }) {
       className="cs-cta group/cta inline-flex items-center gap-2 text-base text-foreground underline decoration-line underline-offset-[6px] transition-colors hover:decoration-foreground"
     >
       Read case study
-      <span aria-hidden="true" className="transition-transform group-hover/cta:translate-x-1">
+      <span aria-hidden="true" className="cs-arrow transition-transform group-hover/cta:translate-x-1">
         →
       </span>
     </Link>
@@ -164,10 +168,10 @@ function Details({ p }: { p: Project }) {
 
 // Each case study is a bordered box the width of the page column, lined up with the
 // "featured work" label and the rest of the page; 32px padding (24px on phones).
-// On hover it takes the live site's row tint, and hovering the visual darkens the CTA underline.
+// On hover it takes the live site's row tint, and hovering the visual or the title darkens the CTA underline and nudges its arrow.
 const ITEM = "mx-auto max-w-6xl px-6";
 const BOX =
-  "rounded-3xl border border-line p-6 sm:p-8 transition-colors duration-300 sm:hover:bg-surface/70 [&:has(.cs-visual:hover)_.cs-cta]:decoration-foreground";
+  "rounded-3xl border border-line p-6 sm:p-8 transition-colors duration-300 sm:hover:bg-surface/70 [&:has(.cs-visual:hover)_.cs-cta]:decoration-foreground [&:has(.cs-title:hover)_.cs-cta]:decoration-foreground [&:has(.cs-title:hover)_.cs-arrow]:translate-x-1 [&:has(.cs-visual:hover)_.cs-arrow]:translate-x-1";
 
 function CaseStudy({ p }: { p: Project }) {
   const v = visuals[p.slug];

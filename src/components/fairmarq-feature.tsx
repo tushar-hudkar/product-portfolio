@@ -16,7 +16,7 @@ export function FairmarqFeature() {
   return (
     <section
       aria-labelledby="fairmarq"
-      className="mt-28 overflow-hidden bg-[#0b0d0c] text-[#f2f4f3] [&:has(.fq-stack:hover)_.fq-cta]:text-[#19c37d] [&:has(.fq-stack:hover)_.fq-cta]:decoration-[#19c37d]"
+      className="mt-28 overflow-hidden bg-[#0b0d0c] text-[#f2f4f3] [&:has(.fq-stack:hover)_.fq-cta]:text-[#f2f4f3] [&:has(.fq-stack:hover)_.fq-cta]:decoration-[#f2f4f3]"
     >
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-6">
         <div className="max-w-md">
@@ -25,7 +25,7 @@ export function FairmarqFeature() {
             Fairmar<span className="text-[#19c37d]">q</span>
           </h2>
           <p className="mt-6 font-serif text-3xl leading-tight">
-            Money decisions are never just <em className="text-[#19c37d]">maths.</em>
+            Money decisions are never just <em className="text-[#2fbf7f]">maths.</em>
           </p>
           <p className="mt-5 leading-relaxed text-[#9ba19d]">
             A decision-support app for people who send money home, travel or get paid from abroad.
@@ -40,7 +40,7 @@ export function FairmarqFeature() {
           </ul>
           <Link
             href="/work/fairmarq"
-            className="fq-cta group/cta mt-9 inline-flex items-center gap-2 text-sm text-[#9ba19d] underline decoration-[#2c312e] underline-offset-[6px] transition-colors hover:text-[#19c37d] hover:decoration-[#19c37d]"
+            className="fq-cta group/cta mt-9 inline-flex items-center gap-2 text-sm text-[#9ba19d] underline decoration-[#2c312e] underline-offset-[6px] transition-colors hover:text-[#f2f4f3] hover:decoration-[#f2f4f3]"
           >
             View the story
             <span aria-hidden="true" className="transition-transform group-hover/cta:translate-x-1">

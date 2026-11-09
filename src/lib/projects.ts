@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   title: string;
   shortTitle: string;
+  cardTitle?: string; // shorter heading for the homepage card
   summary: string;
   company: string;
   year: string;
@@ -47,6 +48,7 @@ export const projects: Project[] = [
     slug: "design-studio",
     title: "Design Studio: Bringing asset creation and production workflows into a more structured, transactional environment",
     shortTitle: "Design Studio",
+    cardTitle: "Design Studio: a structured workflow for AI asset creation",
     summary:
       "Reducing the friction between submitting a creative requirement and receiving a production-ready e-commerce asset.",
     company: "Dresma",
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     slug: "product-capture-app",
     title: "Mobile-first product photography solution from product capture to publish-ready content",
     shortTitle: "Mobile-first product photography",
+    cardTitle: "Mobile-first product photography, from capture to publish",
     summary:
       "Manage product assets without relying entirely on studios and professional photographers.",
     company: "Dresma",
@@ -90,6 +93,7 @@ export const projects: Project[] = [
     slug: "saas-content-platform",
     title: "A SaaS platform empowering brands to deliver high-impact content across multiple channels",
     shortTitle: "Multichannel content platform",
+    cardTitle: "A SaaS platform for multichannel brand content",
     summary:
       "Designed a scalable automation and data retention system to power data-driven decisions across teams.",
     company: "Dresma",
@@ -107,6 +111,7 @@ export const projects: Project[] = [
     slug: "agentic-ai-workflow",
     title: "Workflow that unifies separate linear journeys through an agentic conversational interface",
     shortTitle: "Agentic AI workflow",
+    cardTitle: "One agentic chat that unifies separate workflows",
     summary:
       "Design a chat-based agentic system with collaborative agents operating in shared context for a seamless user experience.",
     company: "Dresma",
@@ -114,6 +119,8 @@ export const projects: Project[] = [
     platform: "Web app",
     role: "Product Designer — AI experience & system design",
     tags: ["Agentic AI", "Conversational UX", "Multi-agent"],
+    // Scope, not a metric: the five specialist agents named in the case study.
+    highlight: { value: "5 agents", label: "In one shared conversation" },
     cover: "/work/agentic-ai-workflow/cover.webp",
     coverTone: "dark",
     hideHeroSummary: true,

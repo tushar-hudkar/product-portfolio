@@ -285,6 +285,7 @@ body:has(.fq:not([style*="display: none"])) {
   --muted: #9ba19d;
   --line: #232725;
   --surface: #151816;
+  --wordmark: #2fbf7f; /* the portfolio logo keeps the site green, not Fairmarq's mint */
   color-scheme: dark;
 }
 .fq .back { display: inline-block; font-size: 14px; color: var(--muted); text-decoration: none; margin-bottom: 4px; }

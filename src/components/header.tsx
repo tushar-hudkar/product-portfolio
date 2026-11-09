@@ -5,13 +5,13 @@ import { LinkedInIcon, MailIcon } from "./icons";
 
 export function Header() {
   return (
-    <header className="header sticky top-0 z-40 border-b border-line/70 bg-background/85 backdrop-blur transition-colors duration-300">
+    <header className="header sticky top-0 z-40 border-b border-line/70 bg-background transition-colors duration-300">
       <HeaderTheme />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
           aria-label={site.name}
-          className="font-serif text-2xl leading-none font-bold lowercase"
+          className="font-serif text-2xl leading-none font-bold text-(--wordmark) lowercase transition-colors duration-300"
         >
           tushar hudkar
         </Link>

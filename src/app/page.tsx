@@ -10,20 +10,14 @@ import { LinkedInIcon, MailIcon } from "@/components/icons";
 
 export const metadata: Metadata = pageMetadata({ description: site.description, path: "/" });
 
-const philosophy = [
-  [
-    "The real user journey runs through the user's mind, not on the screen.",
-    "Observation is the biggest tool.",
-  ],
-  [
-    "Fast does not always mean right.",
-    "Language is more important than structure.",
-    "Breaking rules while keeping the harmony — that's what gets me high on design.",
-  ],
-  [
-    "UX isn't always about making things easy — sometimes the simplest design can ruin the essence of the product.",
-    "Embrace the uncertainty — dig a little, give it a thought, and you'll surprise yourself.",
-  ],
+// The lead belief is shown large; the rest are a list beside it.
+const leadBelief = "The real user journey runs through the user's mind, not on the screen.";
+const beliefs = [
+  "Observation is the biggest tool.",
+  "Language is more important than structure.",
+  "Breaking rules while keeping the harmony — that's what excites me most about design.",
+  "UX isn't always about making things easy — sometimes the simplest design can ruin the essence of the product.",
+  "Fast doesn't always mean right. Embrace the uncertainty — dig a little, give it a thought, and you'll surprise yourself.",
 ];
 
 const questions = [
@@ -35,12 +29,13 @@ const questions = [
 export default function Home() {
   return (
     <>
-      {/* Hero: dark, in the Fairmarq palette, over a slowly twinkling square-dot field. */}
-      <section data-dark-hero className="dark-scope relative isolate overflow-hidden bg-background text-foreground">
+      {/* Hero: dark, in the Fairmarq palette, over a slowly twinkling square-dot field.
+          On laptop/desktop screens that are tall enough it fills the window below the header (.hero-full). */}
+      <section data-dark-hero className="hero-full dark-scope relative isolate flex items-center overflow-hidden bg-background text-foreground">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
           <TwinkleSquares />
         </div>
-        <div className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-24 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-20">
+        <div className="mx-auto grid w-full max-w-6xl gap-14 px-6 pt-16 pb-24 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-20">
           <div className="reveal">
             <p className="-rotate-2 font-hand text-3xl text-brand">Hi, I&apos;m Tushar Hudkar.</p>
             <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight sm:text-7xl">
@@ -48,8 +43,11 @@ export default function Home() {
               that&nbsp;last.
             </h1>
             <p className="mt-8 max-w-xl leading-relaxed text-muted">
-              10+ years turning complex B2B and B2C products into experiences that drive real
-              outcomes. I integrate AI into my process and continuously evolve how I design.
+              {/* The role leads the sentence, a step brighter than the rest, so it reads as who I am
+                  without adding a label to the hero. */}
+              <span className="text-foreground">{site.role}</span> with 10+ years turning complex B2B
+              and B2C products into experiences that drive real outcomes. I integrate AI into my
+              process and continuously evolve how I design.
             </p>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
               <a
@@ -80,13 +78,13 @@ export default function Home() {
       {/* Fairmarq: self-initiated project */}
       <FairmarqFeature />
 
-      {/* Previously worked with */}
-      <section aria-labelledby="clients" className="mx-auto mt-28 max-w-6xl px-6">
-        <div className="flex flex-col gap-6 border-y border-line py-10 md:flex-row md:items-center md:justify-between">
-          <h2 id="clients" className="shrink-0 text-xs tracking-widest text-muted uppercase">
+      {/* Previously worked with: small and centred. Logos are drawn a step smaller here. */}
+      <section aria-labelledby="clients" className="mx-auto mt-20 max-w-6xl px-6">
+        <div className="flex flex-col items-center gap-6 text-center">
+          <h2 id="clients" className="text-[11px] tracking-widest text-muted uppercase">
             Previously worked with
           </h2>
-          <ul className="flex flex-wrap items-center gap-x-12 gap-y-6">
+          <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
             {companies.map((c) => (
               <li key={c.name}>
                 <Image
@@ -94,7 +92,7 @@ export default function Home() {
                   alt={c.name}
                   width={c.width}
                   height={c.height}
-                  className={`${"size" in c ? c.size : "h-6"} w-auto opacity-60 transition-opacity hover:opacity-100`}
+                  className={`${"size" in c ? "h-3.5" : "h-5"} w-auto opacity-60 transition-opacity hover:opacity-100`}
                 />
               </li>
             ))}
@@ -102,44 +100,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="mx-auto max-w-6xl px-6 pt-32">
-        <p className="font-hand text-2xl text-brand">who I am as a designer</p>
-        <h2 className="font-serif text-5xl leading-tight">
-          My design philosophy — and what I&apos;ve learned along the way.
+      <div className="mx-auto mt-20 max-w-6xl px-6">
+        <hr className="border-line" />
+      </div>
+
+      {/* Questions: a compact row of three. */}
+      <section aria-labelledby="questions" className="mx-auto mt-20 max-w-6xl px-6">
+        <h2 id="questions" className="font-hand text-2xl text-brand">
+          the questions I keep asking myself
         </h2>
-        <div className="mt-12 grid divide-y divide-line lg:grid-cols-3 lg:divide-x lg:divide-y-0">
-          {philosophy.map((column, c) =>
-            c === 0 ? (
-              <div key={c} className="flex min-h-[28rem] flex-col justify-between gap-24 bg-surface p-10">
-                <p className="font-sans text-2xl leading-relaxed text-muted">{column[0]}</p>
-                <p className="font-sans text-lg italic leading-relaxed text-muted">{column[1]}</p>
-              </div>
-            ) : (
-              <ul key={c} className="flex flex-col divide-y divide-line">
-                {column.map((p, i) => (
-                  <li key={p} className={`flex flex-1 p-7 ${i === column.length - 1 ? "items-end" : ""}`}>
-                    <p className="font-sans text-lg leading-relaxed text-muted">{p}</p>
-                  </li>
-                ))}
-              </ul>
-            ),
-          )}
-        </div>
+        <ol className="mt-6 grid gap-8 md:grid-cols-3 md:gap-10">
+          {questions.map((q, i) => (
+            <li key={q} className="group flex gap-4">
+              <span aria-hidden="true" className="font-mono text-xs text-muted pt-1.5">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="text-base leading-relaxed text-muted transition-colors duration-300 group-hover:text-foreground">
+                {q}
+              </p>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      <section className="mx-auto mt-24 max-w-6xl px-6">
-        <div className="bg-[#161514] px-7 py-14 text-[#f2efe9] sm:px-14">
-          <p className="font-hand text-2xl text-brand">the questions I keep asking myself</p>
-          <ul className="mt-8 space-y-8">
-            {questions.map((q) => (
-              <li key={q} className="border-b border-[#2c2a27] pb-8 font-serif text-[#f2efe9]/65 transition-colors duration-300 hover:text-[#f2efe9] text-3xl leading-snug italic last:border-0 last:pb-0 sm:text-4xl">
-                {q}
+      {/* A line separates the questions from the philosophy. */}
+      <div className="mx-auto mt-20 max-w-6xl px-6">
+        <hr className="border-line" />
+      </div>
+
+      {/* Philosophy: the lead belief large on the left, the rest as a list beside it. */}
+      <section aria-labelledby="philosophy" className="mx-auto max-w-6xl px-6 pt-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div>
+            <p className="font-hand text-2xl text-brand">who I am as a designer</p>
+            <h2 id="philosophy" className="mt-1 font-serif text-5xl leading-tight tracking-tight">
+              What I believe about design.
+            </h2>
+            <blockquote className="mt-10 border-l-2 border-brand pl-6 font-serif text-3xl leading-snug">
+              {leadBelief}
+            </blockquote>
+          </div>
+          <ul className="divide-y divide-line">
+            {beliefs.map((b) => (
+              <li key={b} className="group py-5 first:pt-0 last:pb-0">
+                <p className="text-lg leading-relaxed text-muted transition-colors duration-300 group-hover:text-foreground">
+                  {b}
+                </p>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
     </>
   );
 }

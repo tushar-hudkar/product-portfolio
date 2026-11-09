@@ -8,7 +8,7 @@ export function ProjectRow({ project, index }: { project: Project; index: number
         href={`/work/${project.slug}`}
         className="group grid gap-6 py-8 transition-colors sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-8 sm:px-4 sm:hover:bg-surface/70"
       >
-        <span className="font-serif text-3xl text-[#cfc9be] transition-colors group-hover:text-brand">
+        <span className="font-serif text-3xl text-[#cfc9be] transition-colors group-hover:text-foreground">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
@@ -29,7 +29,7 @@ export function ProjectRow({ project, index }: { project: Project; index: number
         </div>
         <span
           aria-hidden
-          className="hidden text-2xl text-muted transition-all group-hover:translate-x-1 group-hover:text-accent sm:block"
+          className="hidden text-2xl text-muted transition-all group-hover:translate-x-1 group-hover:text-foreground sm:block"
         >
           →
         </span>
