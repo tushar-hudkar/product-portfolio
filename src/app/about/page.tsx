@@ -42,7 +42,7 @@ const experience: { period: string; role: string; company: string; freelance?: b
     freelance: true,
     label: "Role",
     points: [
-      "Led user research and interviews for a premium hyperlocal marketplace, to understand the target market and shape the product direction.",
+      "Led user research and interviews for a premium Rural-to-Urban (R2U) commerce marketplace, to understand the target market and shape the product direction.",
       "Partnered with the founders and team on business strategy, identifying where design can drive growth and trust.",
       "Developed product concepts from research insights, from early ideas to design direction.",
     ],
