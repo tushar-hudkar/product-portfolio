@@ -112,8 +112,8 @@ export async function Footer() {
         <span>Designed &amp; built with AI</span>
       </div>
 
-      {/* The name, oversized in a soft grey and cropped slightly by the bottom edge; sized in vw, so it spans
-          the width on every screen. A green spotlight follows the cursor on hover. */}
+      {/* The name, oversized as a faint outline and cropped slightly by the bottom edge; sized in vw, so it spans
+          the width on every screen. It fills in with the site green around the cursor on hover. */}
       <FooterName name={site.name} />
     </footer>
   );

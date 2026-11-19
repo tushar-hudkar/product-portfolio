@@ -177,23 +177,21 @@ body {
   .copy-reveal:focus-visible { opacity: 1; }
 }
 
-/* Footer name: grey text with a soft green spotlight that follows the cursor on hover.
+/* Footer name: a faint outline on the black; around the cursor the letters fill in with the site green.
    --x/--y (cursor position) and --spot (0 → 1 on hover) are set by FooterName; registering them
-   lets the spotlight glide and fade instead of jumping. */
+   lets the fill glide and fade instead of jumping. */
 @property --x { syntax: "<length>"; inherits: false; initial-value: 0px; }
 @property --y { syntax: "<length>"; inherits: false; initial-value: 0px; }
 @property --spot { syntax: "<number>"; inherits: false; initial-value: 0; }
 .name-spot {
   color: transparent;
-  background-image:
-    radial-gradient(
-      circle 22vw at var(--x) var(--y),
-      rgb(47 191 127 / calc(var(--spot) * 1)) 0%,
-      rgb(47 191 127 / calc(var(--spot) * 0.55)) 30%,
-      rgb(242 244 243 / calc(var(--spot) * 0.15)) 60%,
-      transparent 80%
-    ),
-    linear-gradient(rgb(242 244 243 / 0.4), rgb(242 244 243 / 0.4));
+  -webkit-text-stroke: 1px rgb(242 244 243 / 0.1);
+  background-image: radial-gradient(
+    circle 16vw at var(--x) var(--y),
+    rgb(47 191 127 / calc(var(--spot) * 1)) 0%,
+    rgb(47 191 127 / calc(var(--spot) * 0.55)) 45%,
+    transparent 75%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   transition: --x 0.25s ease-out, --y 0.25s ease-out, --spot 0.5s ease;

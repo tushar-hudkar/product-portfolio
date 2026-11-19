@@ -3,9 +3,9 @@
 import { useRef } from "react";
 
 /**
- * The oversized footer name. On hover a soft green spotlight follows the cursor through the letters
+ * The oversized footer name: a faint outline that fills in with the site green around the cursor on hover
  * (CSS variables drive a radial gradient clipped to the text; see .name-spot in globals.css).
- * Touch screens and reduced-motion settings keep the plain grey name.
+ * Touch screens keep the plain outline; reduced-motion settings drop the gliding.
  */
 export function FooterName({ name }: { name: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
@@ -49,7 +49,7 @@ export function FooterName({ name }: { name: string }) {
       onPointerEnter={enter}
       onPointerMove={move}
       onPointerLeave={leave}
-      className="name-spot mt-4 -mb-[0.1em] text-center font-serif text-[17vw] leading-none tracking-tight whitespace-nowrap lowercase select-none"
+      className="name-spot mt-16 -mb-[0.1em] sm:mt-24 text-center font-serif text-[17vw] leading-none tracking-tight whitespace-nowrap lowercase select-none"
     >
       {name}
     </p>
